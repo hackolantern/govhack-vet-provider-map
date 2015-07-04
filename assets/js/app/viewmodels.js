@@ -41,8 +41,7 @@ function SearchViewModel(parentVm) {
         }).fail(function() {
             alert("Search Error");
         }).always(function() {
-            if (!$(".sidebar-container").hasClass(".slide-in"))
-                $(".navbar-toggle")[0].click();
+            parentVm.RevealSidebar();
             parentVm.IsBusy(false);
         });
     };
@@ -53,4 +52,12 @@ function AppViewModel(appService) {
     this.Search = new SearchViewModel(this);
     this.Sidebar = ko.observable(new HomeViewModel());
     this.Service = appService;
+    this.RevealSidebar = function() {
+        if (!$(".sidebar-container").is(".slide-in"))
+            $(".navbar-toggle")[0].click();
+    };
+    this.HideSidebar = function() {
+        if ($(".sidebar-container").is(".slide-in"))
+            $(".navbar-toggle")[0].click();
+    };
 }
