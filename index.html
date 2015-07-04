@@ -419,6 +419,68 @@
             var map = null;
             var app = null;
             var restUrl = "../rest";
+            var bufferPx = 2;
+            var wktFormat = null;
+            var mapName = null;
+            var sessionId = null;
+            
+            var selLayer = null;
+            //var scratchLayer = null;
+            
+            function makeWktPolygon(x1, y1, x2, y2) {
+                return "POLYGON(("+x1+" "+y1+", "+x2+" "+y1+", "+x2+" "+y2+", "+x1+" "+y2+", "+x1+" "+y1+"))";
+            }
+            
+            function handleMapClick(e) {
+                var pixel = e.pixel;
+                var llPixel = [pixel[0] - bufferPx, pixel[1] - bufferPx];
+                var urPixel = [pixel[0] + bufferPx, pixel[1] + bufferPx];
+                
+                var ll = map.getCoordinateFromPixel(llPixel);
+                var ur = map.getCoordinateFromPixel(urPixel);
+                
+                var wkt = makeWktPolygon(ll[0], ll[1], ur[0], ur[1]);
+                sendSelectionQuery(wkt);
+            }
+            
+            function sendSelectionQuery(wkt) {
+                //var format = new ol.format.WKT();
+                //var feat = format.readFeature(wkt);
+                //var source = scratchLayer.getSource();
+                //source.addFeature(feat);
+                //return;
+                
+                var reqQueryFeatures = 1 | 2 | 4 | 8;
+                
+                $.ajax({
+                    url: restUrl + "/session/" + sessionId + "/" + mapName + ".Selection",
+                    method: "post",
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("X-HTTP-Method-Override", "PUT");
+                    },
+                    data: {
+                        "layernames": null /* hit any selectable layer */,
+                        "geometry": wkt,
+                        "selectionvariant": "INTERSECTS",
+                        "requestdata": reqQueryFeatures,
+                        "selectioncolor": "0xFF000000",
+                        "selectionformat": "PNG",
+                        "maxfeatures": 1,
+                        "persist": 1,
+                        "format": "json"
+                    },
+                    success: function(data, textStatus, jqXHR) {
+                        processQueryResult(data);
+                        selLayer.getSource().updateParams({seq:new Date().getTime()});
+                    }
+                }).error(function(jqXHR, textStatus, errorThrown) {
+                    $("#error").html(jqXHR.responseText);
+                });
+            }
+            
+            function processQueryResult(data) {
+                
+            }
             
             function loadMap(rtMapInfo) {
                 var projection = null;
@@ -432,6 +494,35 @@
                     projection = "EPSG:" + rtMapInfo.RuntimeMap.CoordinateSystem.EpsgCode;
                 }
                 var metersPerUnit = rtMapInfo.RuntimeMap.CoordinateSystem.MetersPerUnit;
+                
+                mapName = rtMapInfo.RuntimeMap.Name; 
+                sessionId = rtMapInfo.RuntimeMap.SessionId;
+                
+                /*
+                scratchLayer = new ol.layer.Vector({
+                    source: new ol.source.Vector(),
+                    projection: projection
+                })
+                */
+                
+                selLayer = new ol.layer.Image({
+                    name: "MapGuide Dynamic Overlay",
+                    extent: extent,
+                    source: new ol.source.ImageMapGuide({
+                        projection: projection,
+                        url: '../mapagent/mapagent.fcgi',
+                        useOverlay: true,
+                        metersPerUnit: metersPerUnit,
+                        params: {
+                            MAPNAME: mapName,
+                            FORMAT: 'PNG',
+                            SESSION: sessionId,
+                            BEHAVIOR: 1 /* selection */
+                        },
+                        ratio: 2
+                    })
+                });
+                
                 map = new ol.Map({
                   layers: [
                     new ol.layer.Tile({
@@ -455,14 +546,17 @@
                             useOverlay: true,
                             metersPerUnit: metersPerUnit,
                             params: {
-                                MAPNAME: rtMapInfo.RuntimeMap.Name,
+                                MAPNAME: mapName,
                                 FORMAT: 'PNG',
-                                SESSION: rtMapInfo.RuntimeMap.SessionId,
-                                BEHAVIOR: 2
+                                SESSION: sessionId,
+                                BEHAVIOR: 2 /* selection and layers */
                             },
                             ratio: 2
                         })
-                    })
+                    }),
+                    selLayer
+                    //selLayer,
+                    //scratchLayer
                   ],
                   renderer: 'canvas',
                   target: document.getElementById('map'),
@@ -473,20 +567,9 @@
                     zoom: 7
                   })
                 });
-                /*
-                map = new ol.Map({
-                  target: "map",
-                  layers: [
-                    new ol.layer.Tile({
-                      source: new ol.source.OSM()
-                    })
-                  ],
-                  view: new ol.View({
-                    center: [0, 0],
-                    zoom: 2
-                  })
-                });
-                */
+                wktFormat = new ol.format.WKT();
+                map.on("click", handleMapClick);
+                
                 setTimeout(function() {
                   $(window).trigger("resize");
                 }, 500);
