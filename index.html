@@ -76,6 +76,7 @@
             var mapName = null;
             var sessionId = null;
             
+            var closer = null;
             var selLayer = null;
             //var scratchLayer = null;
             
@@ -162,6 +163,7 @@
             }
             
             function processQueryResult(evt, data) {
+                closePopup();
                 if (data.FeatureInformation) {
                     if (data.FeatureInformation.SelectedFeatures) {
                         var selLayers = data.FeatureInformation.SelectedFeatures.SelectedLayer;
@@ -186,6 +188,11 @@
                 }
             }
             
+            function closePopup() {
+                overlay.setPosition(undefined);
+                closer.blur();
+            }
+            
             function loadMap(rtMapInfo) {
                 var projection = null;
                 var extent = [
@@ -206,7 +213,7 @@
                  * Elements that make up the popup.
                  */
                 var container = document.getElementById('popup');
-                var closer = document.getElementById('popup-closer');
+                closer = document.getElementById('popup-closer');
                 
                 
                 /**
@@ -214,8 +221,7 @@
                  * @return {boolean} Don't follow the href.
                  */
                 closer.onclick = function() {
-                  overlay.setPosition(undefined);
-                  closer.blur();
+                  closePopup();
                   return false;
                 };
                 
