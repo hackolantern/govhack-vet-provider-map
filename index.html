@@ -418,9 +418,86 @@
         
             var map = null;
             var app = null;
+            var restUrl = "../rest";
+            
+            function loadMap(rtMapInfo) {
+                var projection = null;
+                var extent = [
+                    rtMapInfo.RuntimeMap.Extents.LowerLeftCoordinate.X,
+                    rtMapInfo.RuntimeMap.Extents.LowerLeftCoordinate.Y,
+                    rtMapInfo.RuntimeMap.Extents.UpperRightCoordinate.X,
+                    rtMapInfo.RuntimeMap.Extents.UpperRightCoordinate.Y
+                ];
+                if (rtMapInfo.RuntimeMap.CoordinateSystem.EpsgCode.length > 0) {
+                    projection = "EPSG:" + rtMapInfo.RuntimeMap.CoordinateSystem.EpsgCode;
+                }
+                var metersPerUnit = rtMapInfo.RuntimeMap.CoordinateSystem.MetersPerUnit;
+                map = new ol.Map({
+                  layers: [
+                    new ol.layer.Tile({
+                      source: new ol.source.OSM({
+                        attributions: [
+                          new ol.Attribution({
+                            html: 'Tiles &copy; <a href="http://www.openstreetmap.org/">' +
+                                'OpenStreetMap</a>'
+                          }),
+                          ol.source.OSM.ATTRIBUTION
+                        ],
+                        url: 'http://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                      })
+                    }),
+                    new ol.layer.Image({
+                        name: "MapGuide Dynamic Overlay",
+                        extent: extent,
+                        source: new ol.source.ImageMapGuide({
+                            projection: projection,
+                            url: '../mapagent/mapagent.fcgi',
+                            useOverlay: true,
+                            metersPerUnit: metersPerUnit,
+                            params: {
+                                MAPNAME: rtMapInfo.RuntimeMap.Name,
+                                FORMAT: 'PNG',
+                                SESSION: rtMapInfo.RuntimeMap.SessionId,
+                                BEHAVIOR: 2
+                            },
+                            ratio: 2
+                        })
+                    })
+                  ],
+                  renderer: 'canvas',
+                  target: document.getElementById('map'),
+                  view: new ol.View({
+                    center: ol.proj.transform([145.01953125, -37.23032838760386], 'EPSG:4326', 'EPSG:3857'),
+                    minZoom: 7,
+                    maxZoom: 19,
+                    zoom: 7
+                  })
+                });
+                /*
+                map = new ol.Map({
+                  target: "map",
+                  layers: [
+                    new ol.layer.Tile({
+                      source: new ol.source.OSM()
+                    })
+                  ],
+                  view: new ol.View({
+                    center: [0, 0],
+                    zoom: 2
+                  })
+                });
+                */
+                setTimeout(function() {
+                  $(window).trigger("resize");
+                }, 500);
+                
+                $(window).on("resize", function() {
+                  map.updateSize();
+                });
+            }
         
             $(function () {
-                var service = new AppService({ restUrl: "../rest" });
+                var service = new AppService({ restUrl: restUrl });
                 app = new AppViewModel(service);
                 ko.applyBindings(app);
                 
@@ -444,49 +521,25 @@
             
                 });
                 
-                var map = new ol.Map({
-                  layers: [
-                    new ol.layer.Tile({
-                      source: new ol.source.XYZ({
-                        attributions: [
-                          new ol.Attribution({
-                            html: 'Powered by <a href="https://github.com/jumpinjackie/mapguide-rest">mapguide-rest</a>'
-                          })
-                        ],
-                        url: '../rest/library/Samples/Sheboygan/MapsTiled/SheboyganNoWatermark.MapDefinition/xyz/Base Layer Group/{z}/{x}/{y}/tile.png'
-                      })
-                    })
-                  ],
-                  renderer: 'canvas',
-                  target: document.getElementById('map'),
-                  view: new ol.View({
-                    center: ol.proj.transform([-87.7302542509315, 43.744459064634], 'EPSG:4326', 'EPSG:3857'),
-                    minZoom: 10,
-                    maxZoom: 19,
-                    zoom: 12
-                  })
-                });
-                /*
-                map = new ol.Map({
-                  target: "map",
-                  layers: [
-                    new ol.layer.Tile({
-                      source: new ol.source.OSM()
-                    })
-                  ],
-                  view: new ol.View({
-                    center: [0, 0],
-                    zoom: 2
-                  })
-                });
-                */
-                
-                setTimeout(function() {
-                  $(window).trigger("resize");
-                }, 500);
-                
-                $(window).on("resize", function() {
-                  map.updateSize();
+                $.ajax({
+                    url: restUrl + "/services/createmap.json",
+                    method: "post",
+                    data: {
+                        "mapdefinition": "Library://GovHack/Education/Maps/Education.MapDefinition",
+                        "requestedfeatures": 1 | 2 | 4 | 8,
+                        //Optional parameters you can specify and/or experiment with
+                        //"iconformat": "GIF",    //Uncomment to override desired image format (default: PNG)
+                        //"iconwidth": 32,         //Uncomment to override desired icon width (default: 16)
+                        //"iconheight": 32,        //Uncomment to override desired icon height (default: 16)
+                        //"iconsperscalerange": 3, //Uncomment to observe theme compression for themes exceeding this number of rules (default: 25)
+                        //"targetmapname": "MyRuntimeMapForOpenLayers", //Uncomment if you require a specific map name be given (default: inferred from Map Definition)
+                        "format": "json"
+                    },
+                    success: function(data, textStatus, jqXHR) {
+                        loadMap(data);
+                    }
+                }).error(function(jqXHR, textStatus, errorThrown) {
+                    alert("Error loading map: " + jqXHR.responseText);
                 });
             });
             
