@@ -369,11 +369,43 @@
                 #map { position: absolute; left: 0; top: 50px; right: 0; bottom: 0; }
             }
             #main-container { }
+            .vert-scrollable { overflow-y: auto; }
         </style>
         <script type="text/html" id="home-template">
             <div class="well">
                 <p>Welcome to the VET Provider Map</p>
                 <p>Search for occupations or courses in your area using the <span class="fa fa-search"></span> icon</p>
+            </div>
+        </script>
+        <script type="text/html" id="search-results-template">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p class="panel-title">Occupations: <span data-bind="text: OccupationResults().length"></span></p>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group" data-bind="foreach: OccupationResults">
+                            <li class="list-group-item">
+                                <div>
+                                    <strong data-bind="text: properties.job_name"></strong>
+                                </div>
+                                <a target="_blank" data-bind="attr: { href: properties['Job Outlook URL'] }">Job Outlook</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p class="panel-title">Courses: <span data-bind="text: CourseResults().length"></span></p>
+                        <ul class="list-group" data-bind="foreach: CourseResults">
+                            <li class="list-group-item">
+                                <strong data-bind="text: properties['Course Title'] + '(' + properties['Course Code'] +')'"></strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </script>
         <script type="text/javascript" src="assets/js/ol.js"></script>
@@ -388,7 +420,8 @@
             var app = null;
         
             $(function () {
-                app = new AppViewModel();
+                var service = new AppService({ restUrl: "../rest" });
+                app = new AppViewModel(service);
                 ko.applyBindings(app);
                 
                 $('.navbar-toggle').click(function () {
@@ -503,8 +536,12 @@
                     </div>
                     <!-- Main Menu -->
                     <div class="side-menu-container">
-                        <ul class="nav navbar-nav">
-                            <li id="sidebar-area" data-bind="with: Sidebar">
+                        <ul class="nav navbar-nav vert-scrollable sidebar-container" data-bind="with: Sidebar">
+                            <li>
+                                <a href="javascript:void(0)" data-bind="text: Title"></a>
+                            </li>
+                            <br/>
+                            <li id="sidebar-area" class="container">
                                 <div data-bind="template: { name: TemplateName, data: $data }">
                                 </div>
                             </li>
