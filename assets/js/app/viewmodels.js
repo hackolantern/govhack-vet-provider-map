@@ -28,6 +28,22 @@ function SearchResultsViewModel(occResults, crsResults) {
     _this.CourseResults = ko.observableArray(crsResults.features || []);
 }
 
+function CourseProviderListViewModel() {
+    
+}
+
+function CourseOccupationListViewModel() {
+    
+}
+
+function OccupationListViewModel() {
+    
+}
+
+function ProviderListViewModel() {
+    
+}
+
 function SearchViewModel(parentVm) {
     var _this = this;
     

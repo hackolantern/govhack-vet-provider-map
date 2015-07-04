@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FeatureSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="FeatureSource-1.0.0.xsd">
+  <Provider>OSGeo.SQLite</Provider>
+  <Parameter>
+    <Name>UseFdoMetadata</Name>
+    <Value>FALSE</Value>
+  </Parameter>
+  <Parameter>
+    <Name>File</Name>
+    <Value>%MG_DATA_PATH_ALIAS[GIS_DATA_ROOT]%DataVic/VET.sqlite</Value>
+  </Parameter>
+  <Extension>
+    <AttributeRelate>
+      <RelateProperty>
+        <FeatureClassProperty>ID</FeatureClassProperty>
+        <AttributeClassProperty>Course ID</AttributeClassProperty>
+      </RelateProperty>
+      <AttributeClass>Default:course-occupation</AttributeClass>
+      <ResourceId>Library://GovHack/Education/Data/DataVic_VET.FeatureSource</ResourceId>
+      <Name>Occ</Name>
+      <RelateType>LeftOuter</RelateType>
+      <ForceOneToOne>false</ForceOneToOne>
+    </AttributeRelate>
+    <Name>CourseOccupation</Name>
+    <FeatureClass>Default:courses</FeatureClass>
+  </Extension>
+  <Extension>
+    <AttributeRelate>
+      <RelateProperty>
+        <FeatureClassProperty>ID</FeatureClassProperty>
+        <AttributeClassProperty>course_id</AttributeClassProperty>
+      </RelateProperty>
+      <AttributeClass>Default:course-provider</AttributeClass>
+      <ResourceId>Library://GovHack/Education/Data/DataVic_VET.FeatureSource</ResourceId>
+      <Name>Prv</Name>
+      <RelateType>LeftOuter</RelateType>
+      <ForceOneToOne>false</ForceOneToOne>
+    </AttributeRelate>
+    <Name>CourseProviders</Name>
+    <FeatureClass>Default:courses</FeatureClass>
+  </Extension>
+</FeatureSource>
