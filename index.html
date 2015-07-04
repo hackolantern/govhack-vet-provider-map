@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css" />
         <link rel="stylesheet" href="assets/css/app/app.css" />
+        <link rel="stylesheet" href="assets/css/app/popup.css" />
         <title>VET Provider Map</title>
         <style type="text/css">
             #map { position: absolute; left: 300px; top: 0; right: 0; bottom: 0; }
@@ -63,7 +64,11 @@
         <script type="text/javascript" src="assets/js/app/viewmodels.js"></script>
         <script type="text/javascript">
         
+            var LAYER_INSTITUTIONS = "Institutions";
+            var LAYER_PROVIDERS = "Providers";
+        
             var map = null;
+            var overlay = null;
             var app = null;
             var restUrl = "../rest";
             var bufferPx = 2;
@@ -87,10 +92,10 @@
                 var ur = map.getCoordinateFromPixel(urPixel);
                 
                 var wkt = makeWktPolygon(ll[0], ll[1], ur[0], ur[1]);
-                sendSelectionQuery(wkt);
+                sendSelectionQuery(e, wkt);
             }
             
-            function sendSelectionQuery(wkt) {
+            function sendSelectionQuery(evt, wkt) {
                 //var format = new ol.format.WKT();
                 //var feat = format.readFeature(wkt);
                 //var source = scratchLayer.getSource();
@@ -117,7 +122,7 @@
                         "format": "json"
                     },
                     success: function(data, textStatus, jqXHR) {
-                        processQueryResult(data);
+                        processQueryResult(evt, data);
                         selLayer.getSource().updateParams({seq:new Date().getTime()});
                     }
                 }).error(function(jqXHR, textStatus, errorThrown) {
@@ -125,8 +130,60 @@
                 });
             }
             
-            function processQueryResult(data) {
+            function BuildFeature(nvc) {
+                var obj = {};
+                for (var i = 0; i < nvc.length; i++) {
+                    obj[nvc[i].Name] = nvc[i].Value;
+                }
+                return obj;
+            }
+            
+            function showPopup(evt, feat, layerName) {
+                var element = $("#popup");
+                var pc = document.getElementById('popup-content');
+                var coordinate = evt.coordinate;
                 
+                var content = "";
+                switch (layerName) {
+                    case LAYER_INSTITUTIONS:
+                        content = "<h3>Institution</h3>";
+                        content += "<p>" + feat.Location + "</p>";
+                        break;
+                    case LAYER_PROVIDERS:
+                        content = "<h3>Provider</h3>";
+                        content += "<p>" + feat["Provider N"] + "</p>";
+                        break;
+                    default:
+                        return;
+                }
+                
+                pc.innerHTML = content;
+                overlay.setPosition(coordinate);
+            }
+            
+            function processQueryResult(evt, data) {
+                if (data.FeatureInformation) {
+                    if (data.FeatureInformation.SelectedFeatures) {
+                        var selLayers = data.FeatureInformation.SelectedFeatures.SelectedLayer;
+                        if (selLayers.length > 0) {
+                            for (var i = 0; i < selLayers.length; i++) {
+                                var selLayer = selLayers[i];
+                                var selLayerName = selLayer["@name"];
+                                var selFeatures = selLayer.Feature;
+                                if (selFeatures.length > 0) {
+                                    if (selFeatures.length == 1) {
+                                        var feat = BuildFeature(selFeatures[0].Property);
+                                        if (selLayerName == LAYER_INSTITUTIONS) {
+                                            showPopup(evt, feat, selLayerName);
+                                        } else if (selLayerName == LAYER_PROVIDERS) {
+                                            showPopup(evt, feat, selLayerName);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
             
             function loadMap(rtMapInfo) {
@@ -144,6 +201,35 @@
                 
                 mapName = rtMapInfo.RuntimeMap.Name; 
                 sessionId = rtMapInfo.RuntimeMap.SessionId;
+                
+                /**
+                 * Elements that make up the popup.
+                 */
+                var container = document.getElementById('popup');
+                var closer = document.getElementById('popup-closer');
+                
+                
+                /**
+                 * Add a click handler to hide the popup.
+                 * @return {boolean} Don't follow the href.
+                 */
+                closer.onclick = function() {
+                  overlay.setPosition(undefined);
+                  closer.blur();
+                  return false;
+                };
+                
+                
+                /**
+                 * Create an overlay to anchor the popup to the map.
+                 */
+                overlay = new ol.Overlay(/** @type {olx.OverlayOptions} */ ({
+                  element: container,
+                  autoPan: true,
+                  autoPanAnimation: {
+                    duration: 250
+                  }
+                }));
                 
                 /*
                 scratchLayer = new ol.layer.Vector({
@@ -205,6 +291,7 @@
                     //selLayer,
                     //scratchLayer
                   ],
+                  overlays: [overlay],
                   renderer: 'canvas',
                   target: document.getElementById('map'),
                   view: new ol.View({
@@ -336,6 +423,12 @@
             <!-- Main Content -->
             <div id="main-container">
                 <div id="map">
+                </div>
+            </div>
+            <div style="display:none">
+                <div id="popup" class="ol-popup">
+                  <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                  <div id="popup-content"></div>
                 </div>
             </div>
         </div>
