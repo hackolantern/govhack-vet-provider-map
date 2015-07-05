@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LayerDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0.0" xsi:noNamespaceSchemaLocation="LayerDefinition-1.0.0.xsd">
+  <VectorLayerDefinition>
+    <ResourceId>Library://GovHack/Education/Data/LGA_SEIFA.FeatureSource</ResourceId>
+    <FeatureName>Default:LGA_SEIFA</FeatureName>
+    <FeatureNameType>FeatureClass</FeatureNameType>
+    <PropertyMapping>
+      <Name>index_rel_socioecon_disadvantage</Name>
+      <Value>index_rel_socioecon_disadvantage</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>index_econ_resources</Name>
+      <Value>index_econ_resources</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>index_edu_occupation</Name>
+      <Value>index_edu_occupation</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>usual_resident_pop</Name>
+      <Value>usual_resident_pop</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>lga_pid</Name>
+      <Value>lga_pid</Value>
+    </PropertyMapping>
+    <Geometry>GEOMETRY</Geometry>
+    <VectorScaleRange>
+      <AreaTypeStyle>
+        <AreaRule>
+          <LegendLabel>Less than 717</LegendLabel>
+          <Filter>"index_econ_resources" &lt; 717</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53eff3ff</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>Between 717 and 850</LegendLabel>
+          <Filter>"index_econ_resources" >= 717 AND "index_econ_resources" &lt; 850</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53c6dbef</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>Between 850 and 983</LegendLabel>
+          <Filter>"index_econ_resources" >= 850 AND "index_econ_resources" &lt; 983</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>539ecae1</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>Between 983 and 1116</LegendLabel>
+          <Filter>"index_econ_resources" >= 983 AND "index_econ_resources" &lt; 1116</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>536baed6</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>Between 1116 and 1248</LegendLabel>
+          <Filter>"index_econ_resources" >= 1116 AND "index_econ_resources" &lt; 1248</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>533182bd</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>More than 1248</LegendLabel>
+          <Filter>"index_econ_resources" >= 1248</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>5308519c</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+      </AreaTypeStyle>
+    </VectorScaleRange>
+  </VectorLayerDefinition>
+</LayerDefinition>

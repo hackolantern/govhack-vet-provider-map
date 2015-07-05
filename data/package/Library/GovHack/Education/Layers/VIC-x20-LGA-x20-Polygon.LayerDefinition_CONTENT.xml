@@ -2,8 +2,28 @@
 <LayerDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0.0" xsi:noNamespaceSchemaLocation="LayerDefinition-1.0.0.xsd">
   <VectorLayerDefinition>
     <ResourceId>Library://GovHack/Education/Data/LGA_SEIFA.FeatureSource</ResourceId>
-    <FeatureName>Default:lga_polygons_merged_seifa</FeatureName>
+    <FeatureName>Default:LGA_SEIFA</FeatureName>
     <FeatureNameType>FeatureClass</FeatureNameType>
+    <PropertyMapping>
+      <Name>index_rel_socioecon_disadvantage</Name>
+      <Value>index_rel_socioecon_disadvantage</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>index_econ_resources</Name>
+      <Value>index_econ_resources</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>index_edu_occupation</Name>
+      <Value>index_edu_occupation</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>usual_resident_pop</Name>
+      <Value>usual_resident_pop</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>lga_pid</Name>
+      <Value>lga_pid</Value>
+    </PropertyMapping>
     <Geometry>GEOMETRY</Geometry>
     <VectorScaleRange>
       <AreaTypeStyle>
@@ -12,7 +32,7 @@
           <AreaSymbolization2D>
             <Fill>
               <FillPattern>Solid</FillPattern>
-              <ForegroundColor>32808080</ForegroundColor>
+              <ForegroundColor>53808080</ForegroundColor>
               <BackgroundColor>ffffffff</BackgroundColor>
             </Fill>
             <Stroke>

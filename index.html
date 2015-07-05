@@ -19,65 +19,9 @@
             #main-container { }
             .vert-scrollable { overflow-y: auto; }
         </style>
-        <script type="text/html" id="home-template">
-            <div class="well">
-                <p>Welcome to the VET Provider Map</p>
-                <p>Search for occupations or courses in your area using the <span class="fa fa-search"></span> icon</p>
-            </div>
-        </script>
-        <script type="text/html" id="course-provider-list-template">
-            <div data-bind="foreach: Providers">
-            
-            </div>
-        </script>
-        <script type="text/html" id="course-occupation-list-template">
-            <div data-bind="foreach: Occupations">
-                
-            </div>
-        </script>
-        <script type="text/html" id="occupation-list-template">
-            <div data-bind="foreach: Occupations">
-            
-            </div>
-        </script>
-        <script type="text/html" id="provider-list-template">
-            <div data-bind="foreach: Providers">
-            
-            </div>
-        </script>
-        <script type="text/html" id="search-results-template">
-            <div class="panel-group">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <p class="panel-title">Occupations: <span data-bind="text: OccupationResults().length"></span></p>
-                    </div>
-                    <div class="panel-body">
-                        <ul class="list-group" data-bind="foreach: OccupationResults">
-                            <li class="list-group-item">
-                                <div>
-                                    <strong data-bind="text: properties.job_name"></strong>
-                                </div>
-                                <a target="_blank" data-bind="attr: { href: properties['Job Outlook URL'] }">Job Outlook</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="panel-group">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <p class="panel-title">Courses: <span data-bind="text: CourseResults().length"></span></p>
-                        <ul class="list-group" data-bind="foreach: CourseResults">
-                            <li class="list-group-item">
-                                <strong data-bind="text: properties['Course Title'] + '(' + properties['Course Code'] +')'"></strong>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </script>
         <script type="text/javascript" src="assets/js/ol.js"></script>
         <script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="assets/js/legend_ol3.js"></script>
         <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/js/knockout-3.3.0.js"></script>
         <script type="text/javascript" src="assets/js/app/ko-bindings.js"></script>
@@ -95,6 +39,7 @@
             var wktFormat = null;
             var mapName = null;
             var sessionId = null;
+            var legend = null;
             
             var closer = null;
             var selLayer = null;
@@ -281,7 +226,23 @@
                         ratio: 2
                     })
                 });
-                
+                var mgOverlay = new ol.layer.Image({
+                    name: "MapGuide Dynamic Overlay",
+                    extent: extent,
+                    source: new ol.source.ImageMapGuide({
+                        projection: projection,
+                        url: '../mapagent/mapagent.fcgi',
+                        useOverlay: true,
+                        metersPerUnit: metersPerUnit,
+                        params: {
+                            MAPNAME: mapName,
+                            FORMAT: 'PNG',
+                            SESSION: sessionId,
+                            BEHAVIOR: 2 /* selection and layers */
+                        },
+                        ratio: 2
+                    })
+                });
                 map = new ol.Map({
                   layers: [
                     new ol.layer.Tile({
@@ -296,23 +257,7 @@
                         url: 'http://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                       })
                     }),
-                    new ol.layer.Image({
-                        name: "MapGuide Dynamic Overlay",
-                        extent: extent,
-                        source: new ol.source.ImageMapGuide({
-                            projection: projection,
-                            url: '../mapagent/mapagent.fcgi',
-                            useOverlay: true,
-                            metersPerUnit: metersPerUnit,
-                            params: {
-                                MAPNAME: mapName,
-                                FORMAT: 'PNG',
-                                SESSION: sessionId,
-                                BEHAVIOR: 2 /* selection and layers */
-                            },
-                            ratio: 2
-                        })
-                    }),
+                    mgOverlay,
                     selLayer
                     //selLayer,
                     //scratchLayer
@@ -327,6 +272,15 @@
                     zoom: 7
                   })
                 });
+                
+                legend = new Legend({
+                    stdIconRoot: "../stdicons",
+                    runtimeMap: rtMapInfo,
+                    map: map,
+                    legendSelector: "#legend",
+                    mgLayerOL: mgOverlay
+                });
+                
                 wktFormat = new ol.format.WKT();
                 map.on("click", handleMapClick);
                 
@@ -387,6 +341,63 @@
             });
             
         </script>
+        <script type="text/html" id="home-template">
+            <div class="well">
+                <p>Welcome to the VET Provider Map</p>
+                <p>Search for occupations or courses in your area using the <span class="fa fa-search"></span> icon</p>
+            </div>
+        </script>
+        <script type="text/html" id="course-provider-list-template">
+            <div data-bind="foreach: Providers">
+            
+            </div>
+        </script>
+        <script type="text/html" id="course-occupation-list-template">
+            <div data-bind="foreach: Occupations">
+                
+            </div>
+        </script>
+        <script type="text/html" id="occupation-list-template">
+            <div data-bind="foreach: Occupations">
+            
+            </div>
+        </script>
+        <script type="text/html" id="provider-list-template">
+            <div data-bind="foreach: Providers">
+            
+            </div>
+        </script>
+        <script type="text/html" id="search-results-template">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p class="panel-title">Occupations: <span data-bind="text: OccupationResults().length"></span></p>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group" data-bind="foreach: OccupationResults">
+                            <li class="list-group-item">
+                                <div>
+                                    <strong data-bind="text: properties.job_name"></strong>
+                                </div>
+                                <a target="_blank" data-bind="attr: { href: properties['Job Outlook URL'] }">Job Outlook</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p class="panel-title">Courses: <span data-bind="text: CourseResults().length"></span></p>
+                        <ul class="list-group" data-bind="foreach: CourseResults">
+                            <li class="list-group-item">
+                                <strong data-bind="text: properties['Course Title'] + '(' + properties['Course Code'] +')'"></strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </script>
     </head>
     
     <body>
@@ -439,6 +450,8 @@
                             <br/>
                             <li id="sidebar-area" class="container">
                                 <div data-bind="template: { name: TemplateName, data: $data }">
+                                </div>
+                                <div id="legend">
                                 </div>
                             </li>
                         </ul>

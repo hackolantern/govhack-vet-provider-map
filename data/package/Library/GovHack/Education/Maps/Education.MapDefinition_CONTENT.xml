@@ -11,6 +11,76 @@
   <BackgroundColor>ffffffff</BackgroundColor>
   <Metadata>&lt;MapDescription>Education&lt;/MapDescription></Metadata>
   <MapLayer>
+    <Name>Population</Name>
+    <ResourceId>Library://GovHack/Education/Layers/lga_seifa_population.LayerDefinition</ResourceId>
+    <Selectable>true</Selectable>
+    <ShowInLegend>true</ShowInLegend>
+    <LegendLabel>Population</LegendLabel>
+    <ExpandInLegend>true</ExpandInLegend>
+    <Visible>false</Visible>
+    <Group>SEIFA Index</Group>
+  </MapLayer>
+  <MapLayer>
+    <Name>Index of Education and Occupation</Name>
+    <ResourceId>Library://GovHack/Education/Layers/lga_seifa_index_edu_occupation.LayerDefinition</ResourceId>
+    <Selectable>true</Selectable>
+    <ShowInLegend>true</ShowInLegend>
+    <LegendLabel>lga_seifa_index_edu_occupation</LegendLabel>
+    <ExpandInLegend>true</ExpandInLegend>
+    <Visible>false</Visible>
+    <Group>SEIFA Index</Group>
+  </MapLayer>
+  <MapLayer>
+    <Name>Index of Economic Resources</Name>
+    <ResourceId>Library://GovHack/Education/Layers/lga_seifa_index_econ_resources.LayerDefinition</ResourceId>
+    <Selectable>true</Selectable>
+    <ShowInLegend>true</ShowInLegend>
+    <LegendLabel>Index of Economic Resources</LegendLabel>
+    <ExpandInLegend>true</ExpandInLegend>
+    <Visible>false</Visible>
+    <Group>SEIFA Index</Group>
+  </MapLayer>
+  <MapLayer>
+    <Name>Kindergartens</Name>
+    <ResourceId>Library://GovHack/Education/Layers/Kindergartens.LayerDefinition</ResourceId>
+    <Selectable>true</Selectable>
+    <ShowInLegend>true</ShowInLegend>
+    <LegendLabel>Kindergartens</LegendLabel>
+    <ExpandInLegend>true</ExpandInLegend>
+    <Visible>true</Visible>
+    <Group>Education</Group>
+  </MapLayer>
+  <MapLayer>
+    <Name>bus_stop</Name>
+    <ResourceId>Library://GovHack/Education/Layers/bus_stop.LayerDefinition</ResourceId>
+    <Selectable>true</Selectable>
+    <ShowInLegend>true</ShowInLegend>
+    <LegendLabel>bus_stop</LegendLabel>
+    <ExpandInLegend>true</ExpandInLegend>
+    <Visible>false</Visible>
+    <Group>PTV</Group>
+  </MapLayer>
+  <MapLayer>
+    <Name>bus_route_regional</Name>
+    <ResourceId>Library://GovHack/Education/Layers/bus_route_regional.LayerDefinition</ResourceId>
+    <Selectable>true</Selectable>
+    <ShowInLegend>true</ShowInLegend>
+    <LegendLabel>bus_route_regional</LegendLabel>
+    <ExpandInLegend>true</ExpandInLegend>
+    <Visible>true</Visible>
+    <Group>PTV</Group>
+  </MapLayer>
+  <MapLayer>
+    <Name>bus_route_metro</Name>
+    <ResourceId>Library://GovHack/Education/Layers/bus_route_metro.LayerDefinition</ResourceId>
+    <Selectable>true</Selectable>
+    <ShowInLegend>true</ShowInLegend>
+    <LegendLabel>bus_route_metro</LegendLabel>
+    <ExpandInLegend>true</ExpandInLegend>
+    <Visible>true</Visible>
+    <Group>PTV</Group>
+  </MapLayer>
+  <MapLayer>
     <Name>tram_track_centerline</Name>
     <ResourceId>Library://GovHack/Education/Layers/tram_track_centerline.LayerDefinition</ResourceId>
     <Selectable>true</Selectable>
@@ -27,7 +97,7 @@
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>tram_stop</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
-    <Visible>true</Visible>
+    <Visible>false</Visible>
     <Group>PTV</Group>
   </MapLayer>
   <MapLayer>
@@ -77,7 +147,7 @@
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>train_station</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
-    <Visible>true</Visible>
+    <Visible>false</Visible>
     <Group>PTV</Group>
   </MapLayer>
   <MapLayer>
@@ -105,9 +175,9 @@
     <ResourceId>Library://GovHack/Education/Layers/InternetAccess.LayerDefinition</ResourceId>
     <Selectable>true</Selectable>
     <ShowInLegend>true</ShowInLegend>
-    <LegendLabel>InternetAccess</LegendLabel>
+    <LegendLabel>Internet Access Locations</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
-    <Visible>true</Visible>
+    <Visible>false</Visible>
     <Group/>
   </MapLayer>
   <MapLayer>
@@ -118,7 +188,7 @@
     <LegendLabel>DHS Offices</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
     <Visible>true</Visible>
-    <Group/>
+    <Group>Government</Group>
   </MapLayer>
   <MapLayer>
     <Name>Providers</Name>
@@ -128,7 +198,7 @@
     <LegendLabel>Providers</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
     <Visible>true</Visible>
-    <Group/>
+    <Group>Education</Group>
   </MapLayer>
   <MapLayer>
     <Name>Institutions</Name>
@@ -138,17 +208,17 @@
     <LegendLabel>Institutions</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
     <Visible>true</Visible>
-    <Group/>
+    <Group>Education</Group>
   </MapLayer>
   <MapLayer>
-    <Name>VIC LGA Polygon</Name>
+    <Name>Victorian LGA Boundaries</Name>
     <ResourceId>Library://GovHack/Education/Layers/VIC LGA Polygon.LayerDefinition</ResourceId>
     <Selectable>true</Selectable>
     <ShowInLegend>true</ShowInLegend>
-    <LegendLabel>VIC LGA Polygon</LegendLabel>
+    <LegendLabel>Victorian LGA Boundaries</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
     <Visible>true</Visible>
-    <Group/>
+    <Group>Government</Group>
   </MapLayer>
   <MapLayerGroup>
     <Name>PTV</Name>
@@ -156,6 +226,30 @@
     <ShowInLegend>true</ShowInLegend>
     <ExpandInLegend>true</ExpandInLegend>
     <LegendLabel>PTV</LegendLabel>
+    <Group/>
+  </MapLayerGroup>
+  <MapLayerGroup>
+    <Name>Education</Name>
+    <Visible>true</Visible>
+    <ShowInLegend>true</ShowInLegend>
+    <ExpandInLegend>true</ExpandInLegend>
+    <LegendLabel>Education</LegendLabel>
+    <Group/>
+  </MapLayerGroup>
+  <MapLayerGroup>
+    <Name>Government</Name>
+    <Visible>true</Visible>
+    <ShowInLegend>true</ShowInLegend>
+    <ExpandInLegend>true</ExpandInLegend>
+    <LegendLabel>Government</LegendLabel>
+    <Group/>
+  </MapLayerGroup>
+  <MapLayerGroup>
+    <Name>SEIFA Index</Name>
+    <Visible>true</Visible>
+    <ShowInLegend>true</ShowInLegend>
+    <ExpandInLegend>true</ExpandInLegend>
+    <LegendLabel>SEIFA Index</LegendLabel>
     <Group/>
   </MapLayerGroup>
   <Watermarks/>

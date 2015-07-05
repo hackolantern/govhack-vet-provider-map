@@ -1,39 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LayerDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0.0" xsi:noNamespaceSchemaLocation="LayerDefinition-1.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<LayerDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.4.0" xsi:noNamespaceSchemaLocation="LayerDefinition-2.4.0.xsd">
   <VectorLayerDefinition>
     <ResourceId>Library://GovHack/Education/Data/PTV.FeatureSource</ResourceId>
+    <Watermarks/>
     <FeatureName>Default:bus_stop</FeatureName>
     <FeatureNameType>FeatureClass</FeatureNameType>
+    <PropertyMapping>
+      <Name>MET_STOPID</Name>
+      <Value>MET_STOPID</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>STOPSPEC</Name>
+      <Value>STOPSPEC</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>ZONES</Name>
+      <Value>ZONES</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>RTUSESTOP</Name>
+      <Value>RTUSESTOP</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>UFI</Name>
+      <Value>UFI</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>UFI_CR</Name>
+      <Value>UFI_CR</Value>
+    </PropertyMapping>
     <Geometry>Geometry</Geometry>
     <VectorScaleRange>
-      <PointTypeStyle>
-        <DisplayAsText>false</DisplayAsText>
-        <AllowOverpost>false</AllowOverpost>
-        <PointRule>
-          <LegendLabel />
-          <PointSymbolization2D>
-            <Mark>
-              <Unit>Points</Unit>
-              <SizeContext>DeviceUnits</SizeContext>
-              <SizeX>10</SizeX>
-              <SizeY>10</SizeY>
-              <Rotation>0</Rotation>
-              <Shape>Square</Shape>
-              <Fill>
-                <FillPattern>Solid</FillPattern>
-                <ForegroundColor>ffffffff</ForegroundColor>
-                <BackgroundColor>ffffffff</BackgroundColor>
-              </Fill>
-              <Edge>
-                <LineStyle>Solid</LineStyle>
-                <Thickness>1</Thickness>
-                <Color>ff000000</Color>
-                <Unit>Points</Unit>
-              </Edge>
-            </Mark>
-          </PointSymbolization2D>
-        </PointRule>
-      </PointTypeStyle>
+      <CompositeTypeStyle>
+        <CompositeRule>
+          <LegendLabel/>
+          <CompositeSymbolization>
+            <SymbolInstance>
+              <ResourceId>Library://GovHack/Education/Symbols/BusStop.SymbolDefinition</ResourceId>
+              <ParameterOverrides/>
+            </SymbolInstance>
+          </CompositeSymbolization>
+        </CompositeRule>
+      </CompositeTypeStyle>
     </VectorScaleRange>
   </VectorLayerDefinition>
 </LayerDefinition>

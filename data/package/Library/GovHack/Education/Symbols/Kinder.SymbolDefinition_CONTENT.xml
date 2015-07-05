@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SimpleSymbolDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="SymbolDefinition-2.4.0.xsd" version="2.4.0">
+  <Name>Bicycle</Name>
+  <Description>Bicycle</Description>
+  <Graphics>
+    <Image>
+      <Content>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</Content>
+      <SizeX>'8.46666666666667'</SizeX>
+      <SizeY>'9.78958333333333'</SizeY>
+    </Image>
+  </Graphics>
+  <PointUsage/>
+  <ParameterDefinition>
+    <Parameter>
+      <Identifier>WIDTH</Identifier>
+      <DefaultValue>8</DefaultValue>
+      <DisplayName>Width</DisplayName>
+      <Description/>
+      <DataType>Real</DataType>
+    </Parameter>
+    <Parameter>
+      <Identifier>HEIGHT</Identifier>
+      <DefaultValue>8</DefaultValue>
+      <DisplayName>Height</DisplayName>
+      <Description/>
+      <DataType>Real</DataType>
+    </Parameter>
+  </ParameterDefinition>
+</SimpleSymbolDefinition>

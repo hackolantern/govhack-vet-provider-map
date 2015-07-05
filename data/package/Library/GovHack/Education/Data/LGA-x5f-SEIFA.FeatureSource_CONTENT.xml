@@ -13,4 +13,24 @@
     <Name>1</Name>
     <CoordinateSystem>GEOGCS["LL84",DATUM["WGS84",SPHEROID["WGS84",6378137.000,298.25722293]],PRIMEM["Greenwich",0],UNIT["Degree",0.01745329251994]]</CoordinateSystem>
   </SupplementalSpatialContextInfo>
+  <Extension>
+    <CalculatedProperty>
+      <Name>usual_resident_pop</Name>
+      <Expression>ToDouble("seifa_usual resident population")</Expression>
+    </CalculatedProperty>
+    <CalculatedProperty>
+      <Name>index_edu_occupation</Name>
+      <Expression>ToDouble("seifa_index of education and occupation")</Expression>
+    </CalculatedProperty>
+    <CalculatedProperty>
+      <Name>index_econ_resources</Name>
+      <Expression>ToInt32("seifa_index of economic resources")</Expression>
+    </CalculatedProperty>
+    <CalculatedProperty>
+      <Name>index_rel_socioecon_disadvantage</Name>
+      <Expression>ToDouble("seifa_index of relative socio_economic advantage and disadvantage")</Expression>
+    </CalculatedProperty>
+    <Name>LGA_SEIFA</Name>
+    <FeatureClass>Default:lga_polygons_merged_seifa</FeatureClass>
+  </Extension>
 </FeatureSource>

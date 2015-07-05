@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LayerDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0.0" xsi:noNamespaceSchemaLocation="LayerDefinition-1.0.0.xsd">
+  <VectorLayerDefinition>
+    <ResourceId>Library://GovHack/Education/Data/LGA_SEIFA.FeatureSource</ResourceId>
+    <FeatureName>Default:LGA_SEIFA</FeatureName>
+    <FeatureNameType>FeatureClass</FeatureNameType>
+    <PropertyMapping>
+      <Name>index_rel_socioecon_disadvantage</Name>
+      <Value>index_rel_socioecon_disadvantage</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>index_econ_resources</Name>
+      <Value>index_econ_resources</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>index_edu_occupation</Name>
+      <Value>index_edu_occupation</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>usual_resident_pop</Name>
+      <Value>usual_resident_pop</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>lga_pid</Name>
+      <Value>lga_pid</Value>
+    </PropertyMapping>
+    <Geometry>GEOMETRY</Geometry>
+    <VectorScaleRange>
+      <AreaTypeStyle>
+        <AreaRule>
+          <LegendLabel>Less than 726.76565707115</LegendLabel>
+          <Filter>"usual_resident_pop" &lt; 726.76565707115</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53f1eef6</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>Between 726.76565707115 and 856.263105248233</LegendLabel>
+          <Filter>"usual_resident_pop" >= 726.76565707115 AND "usual_resident_pop" &lt; 856.263105248233</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53d4b9da</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>Between 856.263105248233 and 985.760553425316</LegendLabel>
+          <Filter>"usual_resident_pop" >= 856.263105248233 AND "usual_resident_pop" &lt; 985.760553425316</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53c994c7</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>Between 985.760553425316 and 1115.2580016024</LegendLabel>
+          <Filter>"usual_resident_pop" >= 985.760553425316 AND "usual_resident_pop" &lt; 1115.2580016024</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53df65b0</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>Between 1115.2580016024 and 1244.75544977948</LegendLabel>
+          <Filter>"usual_resident_pop" >= 1115.2580016024 AND "usual_resident_pop" &lt; 1244.75544977948</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53dd1c77</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>More than 1244.75544977948</LegendLabel>
+          <Filter>"usual_resident_pop" >= 1244.75544977948</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53980043</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+      </AreaTypeStyle>
+    </VectorScaleRange>
+  </VectorLayerDefinition>
+</LayerDefinition>

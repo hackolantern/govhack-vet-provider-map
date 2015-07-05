@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SimpleSymbolDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="SymbolDefinition-2.4.0.xsd" version="2.4.0">
+  <Name>Bicycle</Name>
+  <Description>Bicycle</Description>
+  <Graphics>
+    <Image>
+      <Content>iVBORw0KGgoAAAANSUhEUgAAACAAAAAlCAYAAAAjt+tHAAADw0lEQVRYhbWXT4gbVRzHPzP5aygxu6ZR280SRURdEi1eDP6Bll3EggdvXks9iF5Ei2gJIiUoHkQvFqQH6U1PPSrk4GGxCwt1NcsiFNGVpO2yTdNQwzg7mX3PQ96Lk2w2mXFnf/B4M28e7/uZ3/zm997PkFICsLS0FAVMIK76KOGaCwjAAUStVnMBDCmlFo8DSdXiCsAMSVwoAAewVXNqtZprLC4uavEUkFZ9ksPxgA1YwD3VO/otk0o8VynWV0IWHrLqeqmsLgXgel2fqhTrK4VCgVQqRTKZDFXYtm0sy6JCfaW6XiqiPoM38JLAoYgDo2vqODN1tOt2KOJjIAaaOtB8RbuUklarRa/Xw3XdoWexWIxoNEo2m8UwDD/LmZpkojmOg+M4tNvt/oARIf/a59x39BHMZAYAYXf45/afNK68R6PRAGBmZoZEIkE8Hp+4/lSAra0tErnHyTxzkuOnLwDwxzevI6XAMPqOk1IAsPBhHYCb31/AurHG3a3rzM/PHwwA4LE3rgzdP3rm24nzj73yEQAbnyxMXTtQstn4tARyF9jvG0swIgNP+LFg2U7uMjc3h2EY6D1Emx5rNpuBlgycbk3THAiOms/oPxiAECKwSGgAhhmjeePWlEmRwwN46oNfAi3ux8La7/+3BfLA9vJFss+dATPCb5+dGHr25Ps/A9C6eomjL7wZPsD28kVuL39F7+8tHjp1joXzG0PPpRTc+qHK3bXvwDDJvfhWeABSuGTLZ3G7LXIvvQ1mZE+We+LcKg+/fB6kIFs+i3B3QgSQAgxjkGKBPR7Qduz0x77FfQNs//gluZPvALDT/oteZ3y2i91/nMQDBYRj0bp6KRyATCbDndXLPHjqXQB+//pVkLuDjKhNSonE7O8DhsGd1ctkMpmDA6TTaTqdTn/7VWP5fH5P2pVS0mjeZHenC/RTdjqd9g0wNb+O/nbjzEBw/YsyUko/+4LQAK6nYdv2nnPhtEMF9DeifD4/cY5t2/pyoGnyX7lkA1iW5Z0Ymuljub5VmiLqEbeq66VyhfGFSaFQYHZ21pdYu91mc3Nz7DNVmFh46gKhbu6pCUWGSzMToEL9J2AqhBavrpeeV0M6vkZLMxsQforTwRm+Uqxfm+QJj/izDMfW/sXplPJc997ybW0chEf8hNfFIwDjy/NJpsCSwBHVUpVi/VcvhEf8aSXeVc3WQvvZVIB9II5oTwDeN+8SQNw3wBiItIK4Buhv3qUfXL7FAwGMQKRU03WXQ9/1VhDxwAAeCB2U+lfVv5gTRBzgX6XTtUdklwA9AAAAAElFTkSuQmCC</Content>
+      <SizeX>'8.46666666666667'</SizeX>
+      <SizeY>'9.78958333333333'</SizeY>
+    </Image>
+  </Graphics>
+  <PointUsage/>
+  <ParameterDefinition>
+    <Parameter>
+      <Identifier>WIDTH</Identifier>
+      <DefaultValue>8</DefaultValue>
+      <DisplayName>Width</DisplayName>
+      <Description/>
+      <DataType>Real</DataType>
+    </Parameter>
+    <Parameter>
+      <Identifier>HEIGHT</Identifier>
+      <DefaultValue>8</DefaultValue>
+      <DisplayName>Height</DisplayName>
+      <Description/>
+      <DataType>Real</DataType>
+    </Parameter>
+  </ParameterDefinition>
+</SimpleSymbolDefinition>

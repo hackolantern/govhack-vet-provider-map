@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LayerDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0.0" xsi:noNamespaceSchemaLocation="LayerDefinition-1.0.0.xsd">
+<LayerDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.4.0" xsi:noNamespaceSchemaLocation="LayerDefinition-2.4.0.xsd">
   <VectorLayerDefinition>
     <ResourceId>Library://GovHack/Education/Data/DataVic_LGA_DHS.FeatureSource</ResourceId>
+    <Watermarks/>
     <FeatureName>Default:DHS</FeatureName>
     <FeatureNameType>FeatureClass</FeatureNameType>
     <PropertyMapping>
@@ -62,34 +63,17 @@
     </PropertyMapping>
     <Geometry>Geometry</Geometry>
     <VectorScaleRange>
-      <PointTypeStyle>
-        <DisplayAsText>false</DisplayAsText>
-        <AllowOverpost>false</AllowOverpost>
-        <PointRule>
+      <CompositeTypeStyle>
+        <CompositeRule>
           <LegendLabel/>
-          <PointSymbolization2D>
-            <Mark>
-              <Unit>Points</Unit>
-              <SizeContext>DeviceUnits</SizeContext>
-              <SizeX>10</SizeX>
-              <SizeY>10</SizeY>
-              <Rotation>0</Rotation>
-              <Shape>Circle</Shape>
-              <Fill>
-                <FillPattern>Solid</FillPattern>
-                <ForegroundColor>FF0000FF</ForegroundColor>
-                <BackgroundColor>ffffffff</BackgroundColor>
-              </Fill>
-              <Edge>
-                <LineStyle>Solid</LineStyle>
-                <Thickness>1</Thickness>
-                <Color>ff000000</Color>
-                <Unit>Points</Unit>
-              </Edge>
-            </Mark>
-          </PointSymbolization2D>
-        </PointRule>
-      </PointTypeStyle>
+          <CompositeSymbolization>
+            <SymbolInstance>
+              <ResourceId>Library://GovHack/Education/Symbols/DHS.SymbolDefinition</ResourceId>
+              <ParameterOverrides/>
+            </SymbolInstance>
+          </CompositeSymbolization>
+        </CompositeRule>
+      </CompositeTypeStyle>
     </VectorScaleRange>
   </VectorLayerDefinition>
 </LayerDefinition>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LayerDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0.0" xsi:noNamespaceSchemaLocation="LayerDefinition-1.0.0.xsd">
+  <VectorLayerDefinition>
+    <ResourceId>Library://GovHack/Education/Data/LGA_SEIFA.FeatureSource</ResourceId>
+    <FeatureName>Default:LGA_SEIFA</FeatureName>
+    <FeatureNameType>FeatureClass</FeatureNameType>
+    <PropertyMapping>
+      <Name>index_rel_socioecon_disadvantage</Name>
+      <Value>index_rel_socioecon_disadvantage</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>index_econ_resources</Name>
+      <Value>index_econ_resources</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>index_edu_occupation</Name>
+      <Value>index_edu_occupation</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>usual_resident_pop</Name>
+      <Value>usual_resident_pop</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>lga_pid</Name>
+      <Value>lga_pid</Value>
+    </PropertyMapping>
+    <Geometry>GEOMETRY</Geometry>
+    <VectorScaleRange>
+      <AreaTypeStyle>
+        <AreaRule>
+          <LegendLabel>Less than 745.555265409137</LegendLabel>
+          <Filter>"index_edu_occupation" &lt; 745.555265409137</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53feedde</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>Between 745.555265409137 and 863.086296794442</LegendLabel>
+          <Filter>"index_edu_occupation" >= 745.555265409137 AND "index_edu_occupation" &lt; 863.086296794442</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53fdd0a2</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>Between 863.086296794442 and 980.617328179747</LegendLabel>
+          <Filter>"index_edu_occupation" >= 863.086296794442 AND "index_edu_occupation" &lt; 980.617328179747</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53fdae6b</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>Between 980.617328179747 and 1098.14835956505</LegendLabel>
+          <Filter>"index_edu_occupation" >= 980.617328179747 AND "index_edu_occupation" &lt; 1098.14835956505</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53fd8d3c</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>Between 1098.14835956505 and 1215.67939095036</LegendLabel>
+          <Filter>"index_edu_occupation" >= 1098.14835956505 AND "index_edu_occupation" &lt; 1215.67939095036</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53e6550d</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+        <AreaRule>
+          <LegendLabel>More than 1215.67939095036</LegendLabel>
+          <Filter>"index_edu_occupation" >= 1215.67939095036</Filter>
+          <AreaSymbolization2D>
+            <Fill>
+              <FillPattern>Solid</FillPattern>
+              <ForegroundColor>53a63603</ForegroundColor>
+              <BackgroundColor>ffffffff</BackgroundColor>
+            </Fill>
+            <Stroke>
+              <LineStyle>Solid</LineStyle>
+              <Thickness>1</Thickness>
+              <Color>ff000000</Color>
+              <Unit>Points</Unit>
+            </Stroke>
+          </AreaSymbolization2D>
+        </AreaRule>
+      </AreaTypeStyle>
+    </VectorScaleRange>
+  </VectorLayerDefinition>
+</LayerDefinition>
