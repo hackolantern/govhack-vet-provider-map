@@ -390,7 +390,11 @@
                         </h4>
                     </div>
                     <div data-bind="attr: { id: 'course_' + properties.ID }" class="panel-collapse collapse">
-                        <button>Description</button>
+                        <div class="well">
+                            <p data-bind="text: properties.description"></p>
+                            <strong>This course <span data-bind="text: properties.GovtSubsidised == '1' ? 'is' : 'is not'"> government subsidised</span> government subsidised</strong>
+                            <p>Course Code: <strong data-bind="text: properties.CourseCode"></strong></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -406,7 +410,18 @@
                         </h4>
                     </div>
                     <div data-bind="attr: { id: 'job_' + properties.ANZSCO }" class="panel-collapse collapse">
-                        <button>Description</button>
+                        <div class="well">
+                            <p>ANZSCO: <strong data-bind="text: properties.ANZSCO"></strong></p>
+                            <p data-bind="visible: properties.skills_shortage == '1'">
+                                <img src="assets/icons/short.png" title="There are skill shortages in this occupation" />
+                                <strong>There are skill shortages in this occupation</strong>
+                            </p>
+                            <p data-bind="visible: properties.specialist == '1'">
+                                <img src="assets/icons/spesh.png" title="This is a specialist occupation" />
+                                <strong>This is a specialist occupation</strong>
+                            </p>
+                            <a target="_blank" class="btn btn-primary" data-bind="attr: { href: properties['Job Outlook URL'] }">Job Outlook URL</a>
+                        </div>
                     </div>
                 </div>
             </div>
