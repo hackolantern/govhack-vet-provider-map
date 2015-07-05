@@ -1,0 +1,35 @@
+{
+    "Source": {
+        "Type": "MapGuide",
+        "FeatureSource": "Library://GovHack/Education/Data/DataVic_Providers.FeatureSource",
+        "FeatureClass": "Default:Providers"
+    },
+    "Representations": {
+        "json": {
+            "Adapter": "FeatureSetGeoJson",
+            "Methods": {
+                "GET": {
+                    "PageSize": 100,
+                    "MaxCount": 500,
+                    "Properties": [
+                        "FeatId",
+                        "ASQA code",
+                        "Site Name",
+                        "Government",
+                        "Address Li",
+                        "Address _1",
+                        "Postcode",
+                        "url",
+                        "email",
+                        "Geometry"
+                    ],
+                    "ComputedProperties": {
+                        "Name": "\"Provider N\""
+                    },
+                    "AllowAnonymous": true,
+                    "AllowGroups": ["Everyone"]
+                }
+            }
+        }
+    }
+}

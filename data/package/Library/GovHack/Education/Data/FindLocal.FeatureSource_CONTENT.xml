@@ -3,7 +3,7 @@
   <Provider>OSGeo.SHP</Provider>
   <Parameter>
     <Name>DefaultFileLocation</Name>
-    <Value>%MG_DATA_PATH_ALIAS[GIS_DATA_ROOT]%Public access internet locations/Internet.shp</Value>
+    <Value>%MG_DATA_PATH_ALIAS[GIS_DATA_ROOT]%FindLocal.shp</Value>
   </Parameter>
   <SupplementalSpatialContextInfo>
     <Name>Default</Name>

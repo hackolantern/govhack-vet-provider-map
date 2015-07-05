@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SimpleSymbolDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="SymbolDefinition-2.4.0.xsd" version="2.4.0">
+  <Name>Bicycle</Name>
+  <Description>Bicycle</Description>
+  <Graphics>
+    <Image>
+      <Content>iVBORw0KGgoAAAANSUhEUgAAACAAAAAlCAYAAAAjt+tHAAACuUlEQVRYhe2XwUrjUBSGv8QQMqHUIkWEonTdwYrMaphtu/ERuvIR3Lnp0o2+hc/R9eBCZGiK48KFUinI4MgwlBAy5WYWvTdzW9omsQlu5sDlJk16/i8n/01yjCiKAGi32xZgAracLfKNCSCAEBC9Xm8CYERRpMRtwJHDlgBmTuJCAoRAIEfY6/UmRqvVUuIuUJazQzEVCAAf+C3nUF2lI8W3u553lbPwTJw1m5/lpgAmeundrudd1et1XNfFcZxchYMgwPd9up53ddZs7iNvg248ByhEHJjPqXxmKrerUYj4AohYU7k8L7dnCVORpI7hcJjqPNu22dnZSXVu5qXWGAwwzOUF8/t9HjodhsMhe3t7iflyL717cMDH21sAXl5eEs9f62HzcHwcb39oNNg+OcG0bQBq5+eMTk8Tc7y5ApEQ+NfX2Pf3mHd3/Ly85O7wMD6+eXSUKs/aj9tyuTwV3NxkNBoRCbHSI7kD6CvDqlZj8T/Pz8UCGKZJYzCY2dfjvt1mY2OjOIBFoiqeLy4AqNVqxQL4/f7Mfvj0FDu/UqmkyvFmgEgIHjodDMMAwDAMLMvCdV2q1WrqPGubcHd3d63/v8dL6D/ATGT2wPf9/fcDSPN6zRrqFojcMyeHUAATbRAEQWGKWu5Y0+RfuxQA+L5fCIT6LFe7UlMYrVbLBkpAhRWNSb1eZ2trK5XY6+srj4+PC4/JxuQH8AsYW0wrEDBtl5BNg96amQBdz/sKJEIo8bNm84v8SflrvjULAJGmOY2/4bued7OqEpr4J2a9tbw5TWjP1ay3b98WQWjih/Iq1X3WARa356tCgjlMfVKSEH0dQhM/kOJjOQIltCwSAZZAlFQlAP3Kx2QQTw2wAKIsIW4Adc/HTM2VWjwTwByEK4ctD4VMS+9nEc8MoEEoU6qlqpZYmEUc4C9pRzkv3Wi8wgAAAABJRU5ErkJggg==</Content>
+      <SizeX>'8.46666666666667'</SizeX>
+      <SizeY>'9.78958333333333'</SizeY>
+    </Image>
+  </Graphics>
+  <PointUsage/>
+  <ParameterDefinition>
+    <Parameter>
+      <Identifier>WIDTH</Identifier>
+      <DefaultValue>8</DefaultValue>
+      <DisplayName>Width</DisplayName>
+      <Description/>
+      <DataType>Real</DataType>
+    </Parameter>
+    <Parameter>
+      <Identifier>HEIGHT</Identifier>
+      <DefaultValue>8</DefaultValue>
+      <DisplayName>Height</DisplayName>
+      <Description/>
+      <DataType>Real</DataType>
+    </Parameter>
+  </ParameterDefinition>
+</SimpleSymbolDefinition>

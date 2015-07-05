@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SimpleSymbolDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="SymbolDefinition-2.4.0.xsd" version="2.4.0">
+  <Name>Bicycle</Name>
+  <Description>Bicycle</Description>
+  <Graphics>
+    <Image>
+      <Content>iVBORw0KGgoAAAANSUhEUgAAACAAAAAlCAYAAAAjt+tHAAADDUlEQVRYhe2Xz0sbQRTHP0nzY0nSRbS2ptaQq1CppSgUeylEj0E8lHrpueCl5A8JPdtzEXrw4EkIFDwEDyKlpcWLxRBog0ZDadZlsyybHjKTbkJ2s6uRXvpgeJvsY76fmXkzOy/UbrcBWF5ejgBhICZ8hNGaBdiACdilUskCCLXbbSkeAxTRYgIgPCJxWwCYgCGaWSqVrFAul5PiCUAVXuFmZsAAdOC38KYcpSLE7+Zbhf0RC/fYTrz4VDzagOWc+kS+VdjPZrMkEgkURRmpsGEY6LpOvlLY34kX5xDL4Ew8BegRP2s0MDQN07aJhYOng6qqjI2NAfQPSOZZOEJnrWXrCTQ0jWevZ5lZSQUWr+5qlDePugB9fXc1ZaINHJ5p28yspNhaOwgMsL69QHnTMyQsSVzNOe2ZTMa3eLVa9R07qn1+ZfsP8B/A93lfq9X+HcD8qwc3Iu4bYHY1fWMA18qBq5yQIwVY315wfXf2remrj6FL4DbKhy/ud5+/fvg5MCYej18PwO38X3p7r+f33Mtpym9Oh4oFBnD7qFTX/H1sJicnqdfrpNNpotFocADwXmc321o7QJ1WeF7MsFtoclG/YGpqamCsryQsF797+v44gMWNLLeiYRY3sliW5dq3L4D6UdPT98fFb0dI3ukkoPTDAGyvoNV3856+P67VtDjZOwfgZO+cUCg0qFsbOjlgORqGYfTcC6962Hx5/wO9ZnH88RRVVZF9C+tqRvhbLhkAuq4DnQtkkGtYv11eXmIex5mYmCCZTHav5cIMoWmHcrlcDEgBY3gUJtlslvHxcV/ijUaDSqUy8J0oTM6AX4AmZ8CgUy4higZnaRYGyFcKZWAohBTfiReXxF8yv/pLMwOw/RSn3Tt8vlU49JoJh/gTenPLvTgdUp5L7yzfPg2CcIg/FqOU6+wEGFyee5kAU+jkSUpAfHZCOMQfCXFNNEMKudlQABeIlJwJwDlyjQDivgEGQKgC4hCQa67RSS7f4oEA+iASosXEK5PO1OtBxAMDOCBkUsqtKreYGUQc4A8PEG19AVqBWQAAAABJRU5ErkJggg==</Content>
+      <SizeX>'8.46666666666667'</SizeX>
+      <SizeY>'9.78958333333333'</SizeY>
+    </Image>
+  </Graphics>
+  <PointUsage/>
+  <ParameterDefinition>
+    <Parameter>
+      <Identifier>WIDTH</Identifier>
+      <DefaultValue>8</DefaultValue>
+      <DisplayName>Width</DisplayName>
+      <Description/>
+      <DataType>Real</DataType>
+    </Parameter>
+    <Parameter>
+      <Identifier>HEIGHT</Identifier>
+      <DefaultValue>8</DefaultValue>
+      <DisplayName>Height</DisplayName>
+      <Description/>
+      <DataType>Real</DataType>
+    </Parameter>
+  </ParameterDefinition>
+</SimpleSymbolDefinition>

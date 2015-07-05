@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LayerDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.4.0" xsi:noNamespaceSchemaLocation="LayerDefinition-2.4.0.xsd">
   <VectorLayerDefinition>
-    <ResourceId>Library://GovHack/Education/Data/DataVic_Institutions.FeatureSource</ResourceId>
+    <ResourceId>Library://GovHack/Education/Data/FindLocal.FeatureSource</ResourceId>
     <Watermarks/>
-    <FeatureName>Default:Institutions</FeatureName>
+    <FeatureName>Default:FindLocal</FeatureName>
     <FeatureNameType>FeatureClass</FeatureNameType>
     <PropertyMapping>
-      <Name>region nam</Name>
-      <Value>Region</Value>
+      <Name>Name</Name>
+      <Value>Name</Value>
     </PropertyMapping>
     <PropertyMapping>
-      <Name>FeatId</Name>
-      <Value>FeatId</Value>
+      <Name>Address</Name>
+      <Value>Address</Value>
     </PropertyMapping>
     <PropertyMapping>
-      <Name>local gove</Name>
-      <Value>Local Govt</Value>
-    </PropertyMapping>
-    <PropertyMapping>
-      <Name>postcode</Name>
-      <Value>Postcode</Value>
-    </PropertyMapping>
-    <PropertyMapping>
-      <Name>location</Name>
-      <Value>Location</Value>
+      <Name>phone</Name>
+      <Value>phone</Value>
     </PropertyMapping>
     <Geometry>Geometry</Geometry>
     <VectorScaleRange>
@@ -33,7 +25,7 @@
           <LegendLabel/>
           <CompositeSymbolization>
             <SymbolInstance>
-              <ResourceId>Library://GovHack/Education/Symbols/Institution.SymbolDefinition</ResourceId>
+              <ResourceId>Library://GovHack/Education/Symbols/LearnLocal.SymbolDefinition</ResourceId>
               <ParameterOverrides/>
             </SymbolInstance>
           </CompositeSymbolization>

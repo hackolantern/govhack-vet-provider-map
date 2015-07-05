@@ -11,6 +11,16 @@
   <BackgroundColor>ffffffff</BackgroundColor>
   <Metadata>&lt;MapDescription>Education&lt;/MapDescription></Metadata>
   <MapLayer>
+    <Name>LearnLocal</Name>
+    <ResourceId>Library://GovHack/Education/Layers/LearnLocal.LayerDefinition</ResourceId>
+    <Selectable>true</Selectable>
+    <ShowInLegend>true</ShowInLegend>
+    <LegendLabel>Learn Local</LegendLabel>
+    <ExpandInLegend>true</ExpandInLegend>
+    <Visible>true</Visible>
+    <Group>Education</Group>
+  </MapLayer>
+  <MapLayer>
     <Name>volunteer_resource_centres</Name>
     <ResourceId>Library://GovHack/Education/Layers/volunteer_resource_centres.LayerDefinition</ResourceId>
     <Selectable>true</Selectable>
@@ -53,7 +63,7 @@
   <MapLayer>
     <Name>Kindergartens</Name>
     <ResourceId>Library://GovHack/Education/Layers/Kindergartens.LayerDefinition</ResourceId>
-    <Selectable>false</Selectable>
+    <Selectable>true</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>Kindergartens</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -206,16 +216,6 @@
     <Selectable>true</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>Providers</LegendLabel>
-    <ExpandInLegend>true</ExpandInLegend>
-    <Visible>true</Visible>
-    <Group>Education</Group>
-  </MapLayer>
-  <MapLayer>
-    <Name>Institutions</Name>
-    <ResourceId>Library://GovHack/Education/Layers/Institutions.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
-    <ShowInLegend>true</ShowInLegend>
-    <LegendLabel>Institutions</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
     <Visible>true</Visible>
     <Group>Education</Group>

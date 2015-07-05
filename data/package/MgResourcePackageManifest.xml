@@ -148,26 +148,6 @@
       <Parameters>
         <Parameter>
           <Name>CONTENT</Name>
-          <Value>Library/GovHack/Education/Layers/Institutions.LayerDefinition_CONTENT.xml</Value>
-          <ContentType>text/xml</ContentType>
-        </Parameter>
-        <Parameter>
-          <Name>HEADER</Name>
-          <Value>Library/GovHack/Education/Layers/Institutions.LayerDefinition_HEADER.xml</Value>
-          <ContentType>text/xml</ContentType>
-        </Parameter>
-        <Parameter>
-          <Name>RESOURCEID</Name>
-          <Value>Library://GovHack/Education/Layers/Institutions.LayerDefinition</Value>
-        </Parameter>
-      </Parameters>
-    </Operation>
-    <Operation>
-      <Name>SETRESOURCE</Name>
-      <Version>1.0.0</Version>
-      <Parameters>
-        <Parameter>
-          <Name>CONTENT</Name>
           <Value>Library/GovHack/Education/Data/DataVic-x5f-Providers.FeatureSource_CONTENT.xml</Value>
           <ContentType>text/xml</ContentType>
         </Parameter>
@@ -748,17 +728,17 @@
       <Parameters>
         <Parameter>
           <Name>CONTENT</Name>
-          <Value>Library/GovHack/Education/Symbols/Institution.SymbolDefinition_CONTENT.xml</Value>
+          <Value>Library/GovHack/Education/Symbols/LearnLocal.SymbolDefinition_CONTENT.xml</Value>
           <ContentType>text/xml</ContentType>
         </Parameter>
         <Parameter>
           <Name>HEADER</Name>
-          <Value>Library/GovHack/Education/Symbols/Institution.SymbolDefinition_HEADER.xml</Value>
+          <Value>Library/GovHack/Education/Symbols/LearnLocal.SymbolDefinition_HEADER.xml</Value>
           <ContentType>text/xml</ContentType>
         </Parameter>
         <Parameter>
           <Name>RESOURCEID</Name>
-          <Value>Library://GovHack/Education/Symbols/Institution.SymbolDefinition</Value>
+          <Value>Library://GovHack/Education/Symbols/LearnLocal.SymbolDefinition</Value>
         </Parameter>
       </Parameters>
     </Operation>
@@ -919,6 +899,106 @@
         <Parameter>
           <Name>RESOURCEID</Name>
           <Value>Library://GovHack/Education/Layers/volunteer_resource_centres.LayerDefinition</Value>
+        </Parameter>
+      </Parameters>
+    </Operation>
+    <Operation>
+      <Name>SETRESOURCE</Name>
+      <Version>1.0.0</Version>
+      <Parameters>
+        <Parameter>
+          <Name>CONTENT</Name>
+          <Value>Library/GovHack/Education/Symbols/Internet.SymbolDefinition_CONTENT.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>HEADER</Name>
+          <Value>Library/GovHack/Education/Symbols/Internet.SymbolDefinition_HEADER.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>RESOURCEID</Name>
+          <Value>Library://GovHack/Education/Symbols/Internet.SymbolDefinition</Value>
+        </Parameter>
+      </Parameters>
+    </Operation>
+    <Operation>
+      <Name>SETRESOURCE</Name>
+      <Version>1.0.0</Version>
+      <Parameters>
+        <Parameter>
+          <Name>CONTENT</Name>
+          <Value>Library/GovHack/Education/Symbols/ParkingBike.SymbolDefinition_CONTENT.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>HEADER</Name>
+          <Value>Library/GovHack/Education/Symbols/ParkingBike.SymbolDefinition_HEADER.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>RESOURCEID</Name>
+          <Value>Library://GovHack/Education/Symbols/ParkingBike.SymbolDefinition</Value>
+        </Parameter>
+      </Parameters>
+    </Operation>
+    <Operation>
+      <Name>SETRESOURCE</Name>
+      <Version>1.0.0</Version>
+      <Parameters>
+        <Parameter>
+          <Name>CONTENT</Name>
+          <Value>Library/GovHack/Education/Symbols/ParkingTrain.SymbolDefinition_CONTENT.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>HEADER</Name>
+          <Value>Library/GovHack/Education/Symbols/ParkingTrain.SymbolDefinition_HEADER.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>RESOURCEID</Name>
+          <Value>Library://GovHack/Education/Symbols/ParkingTrain.SymbolDefinition</Value>
+        </Parameter>
+      </Parameters>
+    </Operation>
+    <Operation>
+      <Name>SETRESOURCE</Name>
+      <Version>1.0.0</Version>
+      <Parameters>
+        <Parameter>
+          <Name>CONTENT</Name>
+          <Value>Library/GovHack/Education/Data/FindLocal.FeatureSource_CONTENT.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>HEADER</Name>
+          <Value>Library/GovHack/Education/Data/FindLocal.FeatureSource_HEADER.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>RESOURCEID</Name>
+          <Value>Library://GovHack/Education/Data/FindLocal.FeatureSource</Value>
+        </Parameter>
+      </Parameters>
+    </Operation>
+    <Operation>
+      <Name>SETRESOURCE</Name>
+      <Version>1.0.0</Version>
+      <Parameters>
+        <Parameter>
+          <Name>CONTENT</Name>
+          <Value>Library/GovHack/Education/Layers/LearnLocal.LayerDefinition_CONTENT.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>HEADER</Name>
+          <Value>Library/GovHack/Education/Layers/LearnLocal.LayerDefinition_HEADER.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>RESOURCEID</Name>
+          <Value>Library://GovHack/Education/Layers/LearnLocal.LayerDefinition</Value>
         </Parameter>
       </Parameters>
     </Operation>
