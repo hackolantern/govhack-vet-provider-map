@@ -39,3 +39,7 @@
 .ol-popup-closer:after {
   content: "✖";
 }
+
+#popup-content {
+  min-width: 250px;
+}

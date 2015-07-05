@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="assets/css/app/popup.css" />
         <title>VET Provider Map</title>
         <style type="text/css">
-            #map { position: absolute; left: 300px; top: 0; right: 0; bottom: 0; }
+            #map { position: absolute; left: 400px; top: 0; right: 0; bottom: 0; }
             @media (max-width: 768px) {
                 #map { position: absolute; left: 0; top: 50px; right: 0; bottom: 0; }
             }
@@ -30,7 +30,7 @@
         <script type="text/javascript" src="assets/js/app/viewmodels.js"></script>
         <script type="text/javascript">
         
-            var LAYER_INSTITUTIONS = "Institutions";
+            var LAYER_INSTITUTIONS = "LearnLocal";
             var LAYER_PROVIDERS = "Providers";
         
             var map = null;
@@ -106,6 +106,13 @@
                 return obj;
             }
             
+            function clean(content) {
+                var pre = document.createElement('pre');
+                var text = document.createTextNode( content );
+                pre.appendChild(text);
+                return pre.innerHTML;
+            }
+            
             function showPopup(evt, feat, layerName) {
                 var element = $("#popup");
                 var pc = document.getElementById('popup-content');
@@ -114,12 +121,15 @@
                 var content = "";
                 switch (layerName) {
                     case LAYER_INSTITUTIONS:
-                        content = "<h3>Institution</h3>";
-                        content += "<p>" + feat.Location + "</p>";
+                        content = "<h3>" + clean(feat.Name) + "</h3>";
+                        content += "<p>Address: " + clean(feat.Address || "not specified") + "</p>";
+                        content += "<p>Phone: " + clean(feat.Phone || "not specified") + "</p>";
                         break;
                     case LAYER_PROVIDERS:
-                        content = "<h3>Provider</h3>";
-                        content += "<p>" + feat["Provider N"] + "</p>";
+                        content = "<h3>" + clean(feat["Provider N"]) + "</h3>";
+                        content += "<p>Address: " + clean(feat["Address Li"]) + " " + clean(feat.Postcode) + "</p>";
+                        content += "<p><a target='_blank' href='" + clean(feat.url) + "'>Web Site</a></p>";
+                        content += "<strong>This provider " + clean((feat.Government == "Y") ? "is" : "is not") + " subsidised</strong>";
                         break;
                     default:
                         return;
@@ -294,6 +304,10 @@
                     mgLayerOL: mgOverlay
                 });
                 
+                var service = new AppService({ restUrl: restUrl });
+                app = new AppViewModel(map, service);
+                ko.applyBindings(app);
+                
                 wktFormat = new ol.format.WKT();
                 map.on("click", handleMapClick);
                 
@@ -306,11 +320,7 @@
                 });
             }
         
-            $(function () {
-                var service = new AppService({ restUrl: restUrl });
-                app = new AppViewModel(service);
-                ko.applyBindings(app);
-                
+            $(function () {                
                 $('.navbar-toggle').click(function () {
                     $('.navbar-nav').toggleClass('slide-in');
                     $('.side-body').toggleClass('body-slide-in');
@@ -357,6 +367,7 @@
         <script type="text/html" id="home-template">
             <div class="well">
                 <p>Welcome to the VET Provider Map</p>
+                <p>A web app employing the Victorian Government’s Vocational Education and Training (VET) dataset and other complementary datasets. It intends to provide a one-stop-shop for finding information about local VET providers</p>
                 <p>Search for occupations or courses in your area using the <span class="fa fa-search"></span> icon</p>
             </div>
         </script>
@@ -370,43 +381,54 @@
                 
             </div>
         </script>
-        <script type="text/html" id="occupation-list-template">
-            <div data-bind="foreach: Occupations">
-            
-            </div>
-        </script>
-        <script type="text/html" id="provider-list-template">
-            <div data-bind="foreach: Providers">
-            
-            </div>
-        </script>
-        <script type="text/html" id="search-results-template">
-            <div class="panel-group">
+        <script type="text/html" id="course-list-template">
+            <div class="panel-group" id="#course-list" data-bind="foreach: Results">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <p class="panel-title">Occupations: <span data-bind="text: OccupationResults().length"></span></p>
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-bind="text: properties.CourseTitle, attr: { 'data-parent': '#course-list', href: '#course_' + properties.ID }"></a>
+                        </h4>
                     </div>
-                    <div class="panel-body">
-                        <ul class="list-group" data-bind="foreach: OccupationResults">
-                            <li class="list-group-item">
-                                <div>
-                                    <strong data-bind="text: properties.job_name"></strong>
-                                </div>
-                                <a target="_blank" data-bind="attr: { href: properties['Job Outlook URL'] }">Job Outlook</a>
-                            </li>
-                        </ul>
+                    <div data-bind="attr: { id: 'course_' + properties.ID }" class="panel-collapse collapse">
+                        <button>Description</button>
                     </div>
                 </div>
             </div>
-            <div class="panel-group">
+        </script>
+        <script type="text/html" id="occupation-list-template">
+            <div class="panel-group" id="#job-list" data-bind="foreach: Results">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <p class="panel-title">Courses: <span data-bind="text: CourseResults().length"></span></p>
-                        <ul class="list-group" data-bind="foreach: CourseResults">
-                            <li class="list-group-item">
-                                <strong data-bind="text: properties['Course Title'] + '(' + properties['Course Code'] +')'"></strong>
-                            </li>
-                        </ul>
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-bind="text: properties.job_name, attr: { 'data-parent': '#job-list', href: '#job_' + properties.ANZSCO }"></a>
+                            <img data-bind="visible: properties.skills_shortage == '1'" src="assets/icons/short.png" title="There are skill shortages in this occupation" />
+                            <img data-bind="visible: properties.specialist == '1'" src="assets/icons/spesh.png" title="This is a specialist occupation" />
+                        </h4>
+                    </div>
+                    <div data-bind="attr: { id: 'job_' + properties.ANZSCO }" class="panel-collapse collapse">
+                        <button>Description</button>
+                    </div>
+                </div>
+            </div>
+        </script>
+        <script type="text/html" id="provider-list-template">
+            <div class="panel-group" id="#job-list" data-bind="foreach: Results">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-bind="text: properties.Name + ' (' + properties['Site Name'] + ')', attr: { 'data-parent': '#job-list', href: '#provider_' + properties.FeatId }"></a>
+                            <img data-bind="visible: properties.skills_shortage == '1'" src="assets/icons/short.png" title="There are skill shortages in this occupation" />
+                            <img data-bind="visible: properties.specialist == '1'" src="assets/icons/spesh.png" title="This is a specialist occupation" />
+                        </h4>
+                    </div>
+                    <div data-bind="attr: { id: 'provider_' + properties.FeatId }" class="panel-collapse collapse">
+                        <div class="well">
+                            <p><span data-bind="text: properties['Address Li'] + ' ' + properties.Postcode"></span></p>
+                            <p>ASQA: <span data-bind="text: properties['ASQA code']"></span></p>
+                            <p data-bind="visible: properties.url !=  properties.url != ''">Web: <a target="_blank" data-bind="attr: { href: properties.url }"></a></p>
+                            <p><a target="_blank" data-bind="attr: { href: 'mailto:' + properties.email }">Email</a></p>
+                            <button class="btn btn-primary" data-bind="click: $root.ZoomToLonLat(geometry.coordinates[0], geometry.coordinates[1])"><span class="fa fa-zoom">Show on Map</span></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -442,14 +464,21 @@
                             <!-- Search body -->
                             <div id="search" class="panel-collapse collapse search-area" data-bind="with: Search">
                                 <div class="panel-body">
-                                    <form class="navbar-form" role="search">
+                                    <div class="navbar-form">
                                         <div class="form-group">
-                                            <input type="text" class="form-control search" placeholder="Search Occupations or Providers" data-bind="value: SearchText, enterkey: PerformSearch">
+                                            <label>Search For:</label>
+                                            <select data-bind="options: SearchTypes, value: SearchType">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="navbar-form">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control search" placeholder="Enter your search text" data-bind="value: SearchText, valueUpdate: 'keypress', enterkey: PerformSearch">
                                         </div>
                                         <button type="button" class="btn btn-default" data-bind="click: PerformSearch">
                                             <span class="fa fa-check"></span>
                                         </button>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
