@@ -1,0 +1,18 @@
+.mg-layer-switcher-btn {
+  top: .5em;
+  right: .5em;
+  width: 100px;
+}
+
+.mg-layer-switcher-btn button {
+  width: 100px;
+}
+
+.ol-touch .mg-layer-switcher-btn {
+  top: .5em;
+}
+
+#legendModalBody {
+  height: 500px;
+  overflow-y: auto;
+}

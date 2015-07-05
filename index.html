@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="assets/css/ol.css" />
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="assets/css/app/olcontrols.css" />
         <link rel="stylesheet" href="assets/css/app/app.css" />
         <link rel="stylesheet" href="assets/css/app/popup.css" />
         <title>VET Provider Map</title>
@@ -17,11 +18,12 @@
                 #map { position: absolute; left: 0; top: 50px; right: 0; bottom: 0; }
             }
             #main-container { }
-            .vert-scrollable { overflow-y: auto; }
+            .vert-scrollable { overflow-y: auto !important; }
         </style>
         <script type="text/javascript" src="assets/js/ol.js"></script>
         <script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="assets/js/legend_ol3.js"></script>
+        <script type="text/javascript" src="assets/js/app/olcontrols.js"></script>
         <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/js/knockout-3.3.0.js"></script>
         <script type="text/javascript" src="assets/js/app/ko-bindings.js"></script>
@@ -244,6 +246,17 @@
                     })
                 });
                 map = new ol.Map({
+                  controls: ol.control.defaults({
+                    attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
+                      collapsible: false
+                    })
+                  }).extend([
+                    new LayerSwitcherButton({
+                        clickHandler: function(e) {
+                            $("#legendModal").modal("show");
+                        }
+                    })
+                  ]),
                   layers: [
                     new ol.layer.Tile({
                       source: new ol.source.OSM({
@@ -451,8 +464,6 @@
                             <li id="sidebar-area" class="container">
                                 <div data-bind="template: { name: TemplateName, data: $data }">
                                 </div>
-                                <div id="legend">
-                                </div>
                             </li>
                         </ul>
                     </div>
@@ -469,6 +480,23 @@
                   <a href="#" id="popup-closer" class="ol-popup-closer"></a>
                   <div id="popup-content"></div>
                 </div>
+            </div>
+            <div class="modal fade" id="legendModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Layers</h4>
+                  </div>
+                  <div id="legendModalBody" class="modal-body">
+                    <div id="legend">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
     </body>
