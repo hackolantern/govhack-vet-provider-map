@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FeatureSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="FeatureSource-1.0.0.xsd">
+  <Provider>OSGeo.SQLite</Provider>
+  <Parameter>
+    <Name>UseFdoMetadata</Name>
+    <Value>FALSE</Value>
+  </Parameter>
+  <Parameter>
+    <Name>File</Name>
+    <Value>%MG_DATA_PATH_ALIAS[GIS_DATA_ROOT]%viclgapolygon/LGA_Polygons_Merged_SEIFA.sqlite</Value>
+  </Parameter>
+  <SupplementalSpatialContextInfo>
+    <Name>1</Name>
+    <CoordinateSystem>GEOGCS["LL84",DATUM["WGS84",SPHEROID["WGS84",6378137.000,298.25722293]],PRIMEM["Greenwich",0],UNIT["Degree",0.01745329251994]]</CoordinateSystem>
+  </SupplementalSpatialContextInfo>
+</FeatureSource>

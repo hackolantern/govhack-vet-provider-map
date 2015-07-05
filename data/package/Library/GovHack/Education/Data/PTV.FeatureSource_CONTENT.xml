@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FeatureSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="FeatureSource-1.0.0.xsd">
+  <Provider>OSGeo.SHP</Provider>
+  <Parameter>
+    <Name>DefaultFileLocation</Name>
+    <Value>%MG_DATA_PATH_ALIAS[GIS_DATA_ROOT]%PTV/</Value>
+  </Parameter>
+  <SupplementalSpatialContextInfo>
+    <Name>GCS_WGS_1984</Name>
+    <CoordinateSystem>GEOGCS["LL84",DATUM["WGS84",SPHEROID["WGS84",6378137.000,298.25722293]],PRIMEM["Greenwich",0],UNIT["Degree",0.01745329251994]]</CoordinateSystem>
+  </SupplementalSpatialContextInfo>
+</FeatureSource>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LayerDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0.0" xsi:noNamespaceSchemaLocation="LayerDefinition-1.0.0.xsd">
+  <VectorLayerDefinition>
+    <ResourceId>Library://GovHack/Education/Data/DataVic_Providers.FeatureSource</ResourceId>
+    <FeatureName>Default:Providers</FeatureName>
+    <FeatureNameType>FeatureClass</FeatureNameType>
+    <PropertyMapping>
+      <Name>ASQA code</Name>
+      <Value>ASQA code</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>Provider N</Name>
+      <Value>Provider N</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>Site Name</Name>
+      <Value>Site Name</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>Government</Name>
+      <Value>Government</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>Address Li</Name>
+      <Value>Address Li</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>Address _1</Name>
+      <Value>Address _1</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>Suburb</Name>
+      <Value>Suburb</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>Postcode</Name>
+      <Value>Postcode</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>geographic</Name>
+      <Value>geographic</Value>
+    </PropertyMapping>
+    <Geometry>Geometry</Geometry>
+    <VectorScaleRange>
+      <PointTypeStyle>
+        <DisplayAsText>false</DisplayAsText>
+        <AllowOverpost>false</AllowOverpost>
+        <PointRule>
+          <LegendLabel/>
+          <PointSymbolization2D>
+            <Mark>
+              <Unit>Points</Unit>
+              <SizeContext>DeviceUnits</SizeContext>
+              <SizeX>10</SizeX>
+              <SizeY>10</SizeY>
+              <Rotation>0</Rotation>
+              <Shape>Circle</Shape>
+              <Fill>
+                <FillPattern>Solid</FillPattern>
+                <ForegroundColor>FFFF0000</ForegroundColor>
+                <BackgroundColor>ffffffff</BackgroundColor>
+              </Fill>
+              <Edge>
+                <LineStyle>Solid</LineStyle>
+                <Thickness>1</Thickness>
+                <Color>ff000000</Color>
+                <Unit>Points</Unit>
+              </Edge>
+            </Mark>
+          </PointSymbolization2D>
+        </PointRule>
+      </PointTypeStyle>
+    </VectorScaleRange>
+  </VectorLayerDefinition>
+</LayerDefinition>
