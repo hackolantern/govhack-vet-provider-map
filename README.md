@@ -1,5 +1,5 @@
 # govhack-vet-provider-map
-A map for VET (Vocational Education Training) providers. A detailed project description is available at [PROJECT-DESC.md](PROJECT-DESC.md).
+A map for VET (Vocational Education Training) providers. A detailed project description is available [here](PROJECT-DESC.md).
 
 **URL** </bR>
 http://bit.ly/1LLmn4P
