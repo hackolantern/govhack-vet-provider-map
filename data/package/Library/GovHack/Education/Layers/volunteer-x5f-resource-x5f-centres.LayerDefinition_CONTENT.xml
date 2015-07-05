@@ -1,19 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LayerDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.4.0" xsi:noNamespaceSchemaLocation="LayerDefinition-2.4.0.xsd">
   <VectorLayerDefinition>
-    <ResourceId>Library://GovHack/Education/Data/DataVic_Kindergartens.FeatureSource</ResourceId>
+    <ResourceId>Library://GovHack/Education/Data/DataVic_VolunteerCentres.FeatureSource</ResourceId>
     <Watermarks/>
-    <FeatureName>Default:Kindergartens</FeatureName>
+    <FeatureName>Default:VolunteerCentres</FeatureName>
     <FeatureNameType>FeatureClass</FeatureNameType>
+    <PropertyMapping>
+      <Name>Volunteer</Name>
+      <Value>Volunteer</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>Office Loc</Name>
+      <Value>Office Loc</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>Telephone</Name>
+      <Value>Telephone</Value>
+    </PropertyMapping>
+    <PropertyMapping>
+      <Name>Email</Name>
+      <Value>Email</Value>
+    </PropertyMapping>
     <Geometry>Geometry</Geometry>
     <VectorScaleRange>
-      <MaxScale>750000</MaxScale>
       <CompositeTypeStyle>
         <CompositeRule>
           <LegendLabel/>
           <CompositeSymbolization>
             <SymbolInstance>
-              <ResourceId>Library://GovHack/Education/Symbols/Kinder.SymbolDefinition</ResourceId>
+              <ResourceId>Library://GovHack/Education/Symbols/Volunteer.SymbolDefinition</ResourceId>
               <ParameterOverrides/>
             </SymbolInstance>
           </CompositeSymbolization>

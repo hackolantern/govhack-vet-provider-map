@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SimpleSymbolDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="SymbolDefinition-2.4.0.xsd" version="2.4.0">
+  <Name>Bicycle</Name>
+  <Description>Bicycle</Description>
+  <Graphics>
+    <Image>
+      <Content>iVBORw0KGgoAAAANSUhEUgAAACAAAAAlCAYAAAAjt+tHAAAEz0lEQVRYhb2XzW8bRRiHn5ldr9fr2M53kzSAq6qqkFoqEjhUcACSIiEkOBFugMSBGwf+AQ4IOHHgzAG14tJIiK9DpUYpElCVVm3aolJUoiZpU6KUJDZ17M16vZ7l4F13kzhxXBJeaTT7Ob9nfvPOal/h+z4AJ06c0AEJGEGvs7vhAQpwATUxMeEBCN/3Q3EDMINmBAByl8RVAOACTtDciYkJT4yOjobiFpAOepO9ccABbKAQ9G44SzMQ7x0bmrywy8LrYnxq5HhwqAAvar01NjR5IZvNYlkWpmnuqrDjONi2zRiTF8anRo4SLEM08UxgT8SBjWOGeSbDbA/bnog3gKhrhlm+W9neSsj/TVgpta7fRLHXIaVEaiZSbpb7z3s9/JJGe8/z8H2fSqWCUgrXdbEsC9d1mwNsHHC7UEpRKpVwnDLlchkhJELqCCFJtj+BNOLErS7ajBSZ3iPc/Pnj5gDz8/NIzcBXVRASISS+8vB9hRASxHobY/EUjx15m33ZF+g98GL92apXpmwvYaUH0fRa9u8IAOD1D+5RKa+i6XGkZqCqLkp5qGoF3UgiZe211ZVppBYj2Z6tvys0AwBNNzHMTOBmAN8gtsyBWDxVP5aagdQMiNXOazAuqa5D697ZSmg7gJZ2ge8r1oqL2A/uUq2s1WFyC5e5e+M0vv9wm5Xtlfqx55a2HLOlXSCEJJ7opFC8T6VcYDU3jWF2cH/2HPnFa3QMDBNPdOE6eazM4xGA1fpytATQyDohdTL7juIUF1HKA1/Rd/BlBg69Sn7hCp37n0U3UhC4oaouD/6+gZns3TnAuZMv1ez0FVKLc2z0UzoHnqm74PuKRGoAr2KjvHJ9tqu5aUr/3KGjfwghdYr5GS5++w6F5Vu0pTsbAmzKgb6+PhJanpi/TMxfppT7g1+/eYtKebXuSrimeswCIVm8fZZifob9h19jef48haXfufTdu/x4apRSfpre3h46MhaDg4PNAWKxGDFdkjANTDNOT0837toKU2fex13LU63YCCFYW13A9xWGmSHZfoDZq1+iqi4Hh9/jl/E3WJo7S3vapL+/H9M0EUI0/BRvuiKEqD+saRq6HqOrq4vF22f4688fmL12kpV7F4lb3cxeP0UxP0O6+zBKecz99hVS6mh6nL6+PizLaigajSZJ6CMEJBIJLMti5uInrK05eF6F4Vc+Z+HW99y9cZrn3/yadM+T3PzpI2Yvf4bybHy/HSHEtuJNAcIBhBB0dHQAkE5Z5HI57lz6kEKhQLlcZvKLp7BLBZLJJJlUgkwq0XTmOwLYCqa7uxuoOVNzSeB3ZnY0440RYm7+U3gEsBZDhQBepOE4zqOyNI3I2HVNycNyyQGwbXtPIMLf8vA00FR6RNwenxo5PkbjwiSbzdLZ2fhrtjFyuRxzc3MN7wWFiU2kLlDBSSF44CjrSzMJMMbkeaApRCg+PjXyXHApzK+NpZkDqJ0Up/V/+LGhySvbORERH2Z9bm1dnDYpz8M+Wr5dbQQREX86avEGgMbl+XYRgJlAW9CssaHJ61GIiPixQLwYNCcU2iqaAmwB0RY6AURnXqQF8R0DNIBIBxBXgHDNi9SSa8fiLQFsgLCCZgS3XGrW262ItwwQgQiTMtyq4RZzWxEH+BdLhFexMov2QwAAAABJRU5ErkJggg==</Content>
+      <SizeX>'8.46666666666667'</SizeX>
+      <SizeY>'9.78958333333333'</SizeY>
+    </Image>
+  </Graphics>
+  <PointUsage/>
+  <ParameterDefinition>
+    <Parameter>
+      <Identifier>WIDTH</Identifier>
+      <DefaultValue>8</DefaultValue>
+      <DisplayName>Width</DisplayName>
+      <Description/>
+      <DataType>Real</DataType>
+    </Parameter>
+    <Parameter>
+      <Identifier>HEIGHT</Identifier>
+      <DefaultValue>8</DefaultValue>
+      <DisplayName>Height</DisplayName>
+      <Description/>
+      <DataType>Real</DataType>
+    </Parameter>
+  </ParameterDefinition>
+</SimpleSymbolDefinition>

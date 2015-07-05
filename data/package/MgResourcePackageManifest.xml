@@ -862,5 +862,65 @@
         </Parameter>
       </Parameters>
     </Operation>
+    <Operation>
+      <Name>SETRESOURCE</Name>
+      <Version>1.0.0</Version>
+      <Parameters>
+        <Parameter>
+          <Name>CONTENT</Name>
+          <Value>Library/GovHack/Education/Data/DataVic-x5f-VolunteerCentres.FeatureSource_CONTENT.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>HEADER</Name>
+          <Value>Library/GovHack/Education/Data/DataVic-x5f-VolunteerCentres.FeatureSource_HEADER.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>RESOURCEID</Name>
+          <Value>Library://GovHack/Education/Data/DataVic_VolunteerCentres.FeatureSource</Value>
+        </Parameter>
+      </Parameters>
+    </Operation>
+    <Operation>
+      <Name>SETRESOURCE</Name>
+      <Version>1.0.0</Version>
+      <Parameters>
+        <Parameter>
+          <Name>CONTENT</Name>
+          <Value>Library/GovHack/Education/Symbols/Volunteer.SymbolDefinition_CONTENT.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>HEADER</Name>
+          <Value>Library/GovHack/Education/Symbols/Volunteer.SymbolDefinition_HEADER.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>RESOURCEID</Name>
+          <Value>Library://GovHack/Education/Symbols/Volunteer.SymbolDefinition</Value>
+        </Parameter>
+      </Parameters>
+    </Operation>
+    <Operation>
+      <Name>SETRESOURCE</Name>
+      <Version>1.0.0</Version>
+      <Parameters>
+        <Parameter>
+          <Name>CONTENT</Name>
+          <Value>Library/GovHack/Education/Layers/volunteer-x5f-resource-x5f-centres.LayerDefinition_CONTENT.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>HEADER</Name>
+          <Value>Library/GovHack/Education/Layers/volunteer-x5f-resource-x5f-centres.LayerDefinition_HEADER.xml</Value>
+          <ContentType>text/xml</ContentType>
+        </Parameter>
+        <Parameter>
+          <Name>RESOURCEID</Name>
+          <Value>Library://GovHack/Education/Layers/volunteer_resource_centres.LayerDefinition</Value>
+        </Parameter>
+      </Parameters>
+    </Operation>
   </Operations>
 </ResourcePackageManifest>

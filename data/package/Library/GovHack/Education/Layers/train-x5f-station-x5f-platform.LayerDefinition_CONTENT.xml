@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LayerDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0.0" xsi:noNamespaceSchemaLocation="LayerDefinition-1.0.0.xsd">
   <VectorLayerDefinition>
     <ResourceId>Library://GovHack/Education/Data/PTV.FeatureSource</ResourceId>
@@ -8,11 +8,11 @@
     <VectorScaleRange>
       <AreaTypeStyle>
         <AreaRule>
-          <LegendLabel />
+          <LegendLabel/>
           <AreaSymbolization2D>
             <Fill>
               <FillPattern>Solid</FillPattern>
-              <ForegroundColor>ffffffff</ForegroundColor>
+              <ForegroundColor>2C008000</ForegroundColor>
               <BackgroundColor>ffffffff</BackgroundColor>
             </Fill>
             <Stroke>

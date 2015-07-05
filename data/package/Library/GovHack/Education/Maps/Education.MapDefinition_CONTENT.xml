@@ -11,9 +11,19 @@
   <BackgroundColor>ffffffff</BackgroundColor>
   <Metadata>&lt;MapDescription>Education&lt;/MapDescription></Metadata>
   <MapLayer>
+    <Name>volunteer_resource_centres</Name>
+    <ResourceId>Library://GovHack/Education/Layers/volunteer_resource_centres.LayerDefinition</ResourceId>
+    <Selectable>true</Selectable>
+    <ShowInLegend>true</ShowInLegend>
+    <LegendLabel>Volunteer Resource Centres</LegendLabel>
+    <ExpandInLegend>true</ExpandInLegend>
+    <Visible>false</Visible>
+    <Group/>
+  </MapLayer>
+  <MapLayer>
     <Name>Population</Name>
     <ResourceId>Library://GovHack/Education/Layers/lga_seifa_population.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>Population</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -23,7 +33,7 @@
   <MapLayer>
     <Name>Index of Education and Occupation</Name>
     <ResourceId>Library://GovHack/Education/Layers/lga_seifa_index_edu_occupation.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>lga_seifa_index_edu_occupation</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -33,7 +43,7 @@
   <MapLayer>
     <Name>Index of Economic Resources</Name>
     <ResourceId>Library://GovHack/Education/Layers/lga_seifa_index_econ_resources.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>Index of Economic Resources</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -43,7 +53,7 @@
   <MapLayer>
     <Name>Kindergartens</Name>
     <ResourceId>Library://GovHack/Education/Layers/Kindergartens.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>Kindergartens</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -53,7 +63,7 @@
   <MapLayer>
     <Name>bus_stop</Name>
     <ResourceId>Library://GovHack/Education/Layers/bus_stop.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>bus_stop</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -63,7 +73,7 @@
   <MapLayer>
     <Name>bus_route_regional</Name>
     <ResourceId>Library://GovHack/Education/Layers/bus_route_regional.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>bus_route_regional</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -73,7 +83,7 @@
   <MapLayer>
     <Name>bus_route_metro</Name>
     <ResourceId>Library://GovHack/Education/Layers/bus_route_metro.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>bus_route_metro</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -83,7 +93,7 @@
   <MapLayer>
     <Name>tram_track_centerline</Name>
     <ResourceId>Library://GovHack/Education/Layers/tram_track_centerline.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>tram_track_centerline</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -93,7 +103,7 @@
   <MapLayer>
     <Name>tram_stop</Name>
     <ResourceId>Library://GovHack/Education/Layers/tram_stop.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>tram_stop</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -103,7 +113,7 @@
   <MapLayer>
     <Name>tram_route</Name>
     <ResourceId>Library://GovHack/Education/Layers/tram_route.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>tram_route</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -113,7 +123,7 @@
   <MapLayer>
     <Name>train_track_centerline</Name>
     <ResourceId>Library://GovHack/Education/Layers/train_track_centerline.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>train_track_centerline</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -123,7 +133,7 @@
   <MapLayer>
     <Name>train_station_platform</Name>
     <ResourceId>Library://GovHack/Education/Layers/train_station_platform.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>train_station_platform</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -133,7 +143,7 @@
   <MapLayer>
     <Name>train_station_bike_storage</Name>
     <ResourceId>Library://GovHack/Education/Layers/train_station_bike_storage.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>train_station_bike_storage</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -143,7 +153,7 @@
   <MapLayer>
     <Name>train_station</Name>
     <ResourceId>Library://GovHack/Education/Layers/train_station.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>train_station</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -153,7 +163,7 @@
   <MapLayer>
     <Name>train_corridor_centerline</Name>
     <ResourceId>Library://GovHack/Education/Layers/train_corridor_centerline.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>train_corridor_centerline</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -163,7 +173,7 @@
   <MapLayer>
     <Name>train_carpark</Name>
     <ResourceId>Library://GovHack/Education/Layers/train_carpark.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>train_carpark</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -173,7 +183,7 @@
   <MapLayer>
     <Name>InternetAccess</Name>
     <ResourceId>Library://GovHack/Education/Layers/InternetAccess.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>Internet Access Locations</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
@@ -183,11 +193,11 @@
   <MapLayer>
     <Name>DHS</Name>
     <ResourceId>Library://GovHack/Education/Layers/DHS.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>DHS Offices</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>
-    <Visible>true</Visible>
+    <Visible>false</Visible>
     <Group>Government</Group>
   </MapLayer>
   <MapLayer>
@@ -213,7 +223,7 @@
   <MapLayer>
     <Name>Victorian LGA Boundaries</Name>
     <ResourceId>Library://GovHack/Education/Layers/VIC LGA Polygon.LayerDefinition</ResourceId>
-    <Selectable>true</Selectable>
+    <Selectable>false</Selectable>
     <ShowInLegend>true</ShowInLegend>
     <LegendLabel>Victorian LGA Boundaries</LegendLabel>
     <ExpandInLegend>true</ExpandInLegend>

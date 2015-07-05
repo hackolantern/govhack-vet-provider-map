@@ -43,6 +43,7 @@
     </PropertyMapping>
     <Geometry>Geometry</Geometry>
     <VectorScaleRange>
+      <MaxScale>750000</MaxScale>
       <CompositeTypeStyle>
         <CompositeRule>
           <LegendLabel/>
