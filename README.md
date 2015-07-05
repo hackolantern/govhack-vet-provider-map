@@ -1,6 +1,9 @@
 # govhack-vet-provider-map
 A map for VET (Vocational Education Training) providers
 
+**URL** </bR>
+http://bit.ly/1LLmn4P
+
 # Objectives
 1. This project was built to allow its users to look up VET course information or occupation names to find VET providers for that occupation
 
@@ -34,9 +37,9 @@ mapguide-rest 1.0 RC2
 -VET Training Providers - https://www.data.vic.gov.au/data/dataset/list-of-contracted-training-organisations </br>   
 -Learn Local Locations - http://learnlocal.org.au/find-a-learn-local/ </br>
 -SEIFA Indexes - http://www.abs.gov.au/ausstats/abs@.nsf/Lookup/2033.0.55.001main+features100132011 </br>
--DHS office locations - https://www.data.vic.gov.au/data/dataset/dhs-area-to-region-mapping-table-of-office-locations </br>
--Volunteers resources centre - https://www.data.vic.gov.au/data/dataset/volunteer-resource-centres-contact-data </br>
--Volunteer Centre resources 2 -http://www.volunteer.vic.gov.au/directory/volunteer-resource-centres </br>
+-DHS Office Locations - https://www.data.vic.gov.au/data/dataset/dhs-area-to-region-mapping-table-of-office-locations </br>
+-Volunteer Resources Centre - https://www.data.vic.gov.au/data/dataset/volunteer-resource-centres-contact-data </br>
+-Volunteer Resources Centre 2 -http://www.volunteer.vic.gov.au/directory/volunteer-resource-centres </br>
 -Public Internet Locations - https://www.data.vic.gov.au/data/dataset/public-internet-locations </br>
 -PTV Shapefiles - https://github.com/OKFNau/OpenTransportData </br>
 -LGA Shapefiles - http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1270.0.55.003July%202011 </br>
