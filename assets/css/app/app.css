@@ -24,7 +24,7 @@ body { overflow: hidden; }
 */
 /*.absolute-wrapper{
     position: fixed;
-    width: 400px;
+    width: 380px;
     height: 100%;
     background-color: #f8f8f8;
     border-right: 1px solid #e7e7e7;
@@ -32,7 +32,7 @@ body { overflow: hidden; }
 
 .side-menu {
   position: fixed;
-  width: 400px;
+  width: 380px;
   height: 100%;
   background-color: #f8f8f8;
   border-right: 1px solid #e7e7e7;
@@ -157,7 +157,7 @@ body { overflow: hidden; }
 }
 /* Main body section */
 .side-body {
-  margin-left: 400px;
+  margin-left: 380px;
 }
 /* small screen */
 @media (max-width: 768px) {
@@ -174,7 +174,7 @@ body { overflow: hidden; }
   /* Slide in animation */
   @-moz-keyframes slidein {
     0% {
-      left: -400px;
+      left: -380px;
     }
     100% {
       left: 10px;
@@ -182,7 +182,7 @@ body { overflow: hidden; }
   }
   @-webkit-keyframes slidein {
     0% {
-      left: -400px;
+      left: -380px;
     }
     100% {
       left: 10px;
@@ -190,7 +190,7 @@ body { overflow: hidden; }
   }
   @keyframes slidein {
     0% {
-      left: -400px;
+      left: -380px;
     }
     100% {
       left: 10px;
@@ -201,7 +201,7 @@ body { overflow: hidden; }
       left: 0;
     }
     100% {
-      left: -400px;
+      left: -380px;
     }
   }
   @-webkit-keyframes slideout {
@@ -209,7 +209,7 @@ body { overflow: hidden; }
       left: 0;
     }
     100% {
-      left: -400px;
+      left: -380px;
     }
   }
   @keyframes slideout {
@@ -217,7 +217,7 @@ body { overflow: hidden; }
       left: 0;
     }
     100% {
-      left: -400px;
+      left: -380px;
     }
   }
   /* Slide side menu*/
@@ -233,8 +233,8 @@ body { overflow: hidden; }
   .side-menu-container > .navbar-nav {
     /* Add position:absolute for scrollable menu -> see top comment */
     position: fixed;
-    left: -400px;
-    width: 400px;
+    left: -380px;
+    width: 380px;
     top: 43px;
     height: 100%;
     border-right: 1px solid #e7e7e7;
@@ -261,7 +261,7 @@ body { overflow: hidden; }
       left: 0;
     }
     100% {
-      left: 400px;
+      left: 380px;
     }
   }
   @-webkit-keyframes bodyslidein {
@@ -269,7 +269,7 @@ body { overflow: hidden; }
       left: 0;
     }
     100% {
-      left: 400px;
+      left: 380px;
     }
   }
   @keyframes bodyslidein {
@@ -277,12 +277,12 @@ body { overflow: hidden; }
       left: 0;
     }
     100% {
-      left: 400px;
+      left: 380px;
     }
   }
   @-moz-keyframes bodyslideout {
     0% {
-      left: 400px;
+      left: 380px;
     }
     100% {
       left: 0;
@@ -290,7 +290,7 @@ body { overflow: hidden; }
   }
   @-webkit-keyframes bodyslideout {
     0% {
-      left: 400px;
+      left: 380px;
     }
     100% {
       left: 0;
@@ -298,7 +298,7 @@ body { overflow: hidden; }
   }
   @keyframes bodyslideout {
     0% {
-      left: 400px;
+      left: 380px;
     }
     100% {
       left: 0;
