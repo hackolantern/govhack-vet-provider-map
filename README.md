@@ -1,8 +1,7 @@
 # govhack-vet-provider-map
 A map for VET (Vocational Education Training) providers. A detailed project description is available [here](PROJECT-DESC.md).
 
-**URL** </bR>
-http://bit.ly/1LLmn4P
+This was a project for the GovHack 2015 hackathon.
 
 # Objectives
 1. This project was built to allow its users to look up VET course information or occupation names to find VET providers for that occupation
@@ -26,8 +25,8 @@ mapguide-rest 1.0 RC2
 
 # Setup
 
-1. Install MapGuide Open Source
-2. Install mapguide-rest 
+1. Install [MapGuide Open Source](https://mapguide.osgeo.org/)
+2. Install [mapguide-rest](https://github.com/jumpinjackie/mapguide-rest)
 3. git clone this repository into the 'www' directory of the MapGuide web installation as $CLONE_NAME
 4. Set up a new alias named GIS_DATA_ROOT that points to $YOUR_GIT_CLONE_PATH/Data
 5. Load the included package file via the MapGuide Site Administrator
